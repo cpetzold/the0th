@@ -4,7 +4,6 @@
  */
 
 var sys = require('sys'),
-    ext = require('ext'),
     express = require('express'),
     connect = require('connect');
 
@@ -37,7 +36,7 @@ app.get('/:page', function(req, res) {
   res.render('index.jade', {
     locals: {
       site: sitename,
-      title: pagename.toTitle(),
+      title: pagename,
       bodyid: (pagename == 'résumé') ? 'resume' : pagename
     }
   });
@@ -47,7 +46,7 @@ app.get('/', function(req, res){
   res.render('index.jade', {
     locals: {
       site: sitename,
-      title: 'home',
+      title: '',
       subtitle: '',
       bodyid: 'home'
     }
