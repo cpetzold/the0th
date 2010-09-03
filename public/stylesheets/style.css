@@ -1,0 +1,135 @@
+@font-face {
+  font-family: Pixel;
+  src: url('../fonts/pixel.ttf');
+}
+.noli {
+  display: inline;
+  list-style-type: none;
+}
+.pixel {
+  font-family: Pixel, Ariel;
+  font-size: 8px;
+}
+.clear {
+  clear: both;
+  height: 0;
+  line-height: 0;
+  font-size: 0px;
+}
+body {
+  font-size: 20px;
+  background: #262626;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header,
+footer,
+section,
+aside,
+nav,
+article {
+  display: block;
+}
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+div, a {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.hidden {
+  display: none;
+}
+#container {
+  position: relative;
+  margin: 20px auto;
+  padding-top: 2em;
+  background: #edf2f7;
+  width: 600px;
+  height: 2000px;
+  box-shadow: 0px 0px 10px #000000;
+  -webkit-box-shadow: 0px 0px 10px #000000;
+  -moz-box-shadow: 0px 0px 10px #000000;
+}
+nav {
+  position: absolute;
+  top: -5px;
+}
+nav li {
+  display: inline;
+  list-style-type: none;
+}
+nav li a {
+  float: left;
+  margin: 0px 5px;
+  padding: 8px 15px 10px 15px;
+}
+nav li a .text {
+  color: #444444;
+}
+nav li a .cap, nav li a .num {
+  font-family: Pixel, Ariel;
+  font-size: 8px;
+  color: #bbbbbb;
+}
+nav li a:hover {
+  background: #edf2f7;
+}
+nav li a:hover .text {
+  color: #262626;
+  text-decoration: underline;
+}
+#me #navme a, #projects #navprojects a, #resume #navresume a {
+  padding-top: 5px;
+  background: #ffffff;
+  box-shadow: 0px 2px #dddddd;
+  -webkit-box-shadow: 0px 2px #dddddd;
+  -moz-box-shadow: 0px 2px #dddddd;
+}
+#me #navme a .num, #projects #navprojects a .num, #resume #navresume a .num {
+  text-decoration: underline;
+  color: #ed1c48;
+}
+#logo a {
+  background: #ed1c48;
+  box-shadow: 0px 2px #dddddd;
+  -webkit-box-shadow: 0px 2px #dddddd;
+  -moz-box-shadow: 0px 2px #dddddd;
+}
+#logo a .text {
+  color: #edf2f7;
+}
+#logo a .cap {
+  color: #ff608c;
+}
+#logo a:hover {
+  color: #ffffff;
+}
+#home #logo a .num {
+  text-decoration: underline;
+}
+header {
+  margin-top: 0.8em;
+  padding: 7px;
+}
+#title {
+  text-shadow: 1px 3px #dddddd;
+}
+#subtitle {
+  font-size: 1.3em;
+  line-height: 0.7em;
+  color: #cccccc;
+}
+#content {
+  padding: 10px;
+}

@@ -1,0 +1,42 @@
+!!! 5
+html(lang="en")
+  head
+    - var site_title = title ? site + " " + title : site
+    title= site_title
+    link(rel='stylesheet', href='stylesheets/style.css')
+  body(id=bodyid)
+  
+    #container
+      nav
+        ul
+          li#logo
+            a(href='/', title='Home')
+              .num 0
+              .text= site
+              .cap .com
+          li#navme
+            a(href='/me', title='Me') 
+              .num 1
+              .text me
+              .cap Conner Petzold
+          li#navprojects
+            a(href='/projects', title='Projects')
+              .num 2 
+              .text projects
+              .cap on GitHub!
+          li#navresume
+            a(href='/résumé', title='Résumé')
+              .num 3
+              .text résumé
+              .cap Web Developer
+      
+      .clear
+      
+      - if (title)      
+        header
+          h1#title!= title
+            
+      #content!= body
+      
+      script(src='javascripts/jquery.min.js', type='text/javascrip')
+      script(src='javascripts/main.js', type='text/javascript')
