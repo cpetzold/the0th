@@ -47,7 +47,7 @@ app.get('/', function(req, res){
   res.render('index.jade', {
     locals: {
       site: sitename,
-      title: '',
+      title: 'home',
       subtitle: '',
       bodyid: 'home'
     }
