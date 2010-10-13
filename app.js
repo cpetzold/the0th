@@ -29,15 +29,17 @@ app.configure('production', function(){
 });
 
 var sitename = 'the0th';
+var pages = ['résumé', 'resume', 'projects'];
 
 // Routes
 app.get('/:page', function(req, res) {
   var pagename = decodeURIComponent(req.params.page);
-  res.render('index.jade', {
+  pagename = (pagename == 'résumé') ? 'resume' : pagename;
+  res.render(pagename+'.jade', {
     locals: {
       site: sitename,
       title: pagename,
-      bodyid: (pagename == 'résumé') ? 'resume' : pagename
+      bodyid: pagename
     }
   });
 });

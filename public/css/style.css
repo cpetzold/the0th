@@ -31,8 +31,6 @@ nav,
 article {
   display: block;
 }
-ul,
-li,
 h1,
 h2,
 h3,
@@ -55,7 +53,7 @@ div, a {
 #container {
   position: relative;
   margin: 20px auto;
-  padding-left: 50px;
+  padding-left: 10px;
   max-width: 1280px;
   min-width: 800px;
 }
@@ -69,18 +67,17 @@ div, a {
   box-shadow: 0px 2px #dddddd;
   -webkit-box-shadow: 0px 2px #dddddd;
   -moz-box-shadow: 0px 2px #dddddd;
-  z-index: 0;
+  z-index: -1;
 }
 #content {
-  width: -110%;
-  position: absolute;
-  right: 190px;
+  margin-right: 190px;
   border-right: 5px solid #dddddd;
   padding-top: 2em;
   background: #edf2f7;
-  height: 2000px;
+  height: 1000px;
   padding: 10px;
-  z-index: 1;
+  padding-top: 5em;
+  z-index: 2;
 }
 .fixed {
   width: 800px;
@@ -94,6 +91,10 @@ nav {
   font-size: 1.5em;
   position: absolute;
   top: -5px;
+}
+nav ul, nav li {
+  margin: 0;
+  padding: 0;
 }
 nav li {
   display: inline;
@@ -151,11 +152,8 @@ nav li a:hover .text {
   line-height: 0.7em;
   color: #cccccc;
 }
-article {
-  margin-top: 5em;
-}
 section {
-  margin: 0 -15px;
+  margin: 10px -15px;
   background: #ffffff;
   padding: 10px;
   -moz-border-radius: 3px;

@@ -61,7 +61,7 @@ body {
 }
 
 header, footer, section, aside, nav, article { display: block; }
-ul, li, h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
 }
@@ -77,7 +77,7 @@ div, a { .round; }
 #container {
   position: relative;
   margin: 20px auto;
-  padding-left: 50px;
+  padding-left: 10px;
   max-width: @max-width;
   min-width: @min-width;
 }
@@ -90,19 +90,18 @@ div, a { .round; }
   width: @sidebar-width;
   height: 450px;
   .shadow;
-  z-index: 0;
+  z-index: -1;
 }
 
 #content {
-  width: 100% - @sidebar-width - 10px;
-  position: absolute;
-  right: @sidebar-width - 10px;
+  margin-right: @sidebar-width - 10px;
   border-right: 5px solid @light;
   padding-top: 2em;
   background: @lighter;
-  height: 2000px;
+  height: 1000px;
   padding: 10px;
-  z-index: 1;
+  padding-top: 5em;
+  z-index: 2;
 }
 
 .fixed {
@@ -118,6 +117,12 @@ nav {
   font-size: 1.5em;
   position: absolute;
   top: -5px;
+  
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
   li {
     .noli;
     
@@ -188,11 +193,10 @@ nav {
 }
 
 article {
-  margin-top: 5em;
 }
 
 section {
-  margin: 0 -15px;
+  margin: 10px -15px;
   background: @lightest;
   padding: 10px;
   .round;
