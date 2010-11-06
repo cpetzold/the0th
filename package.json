@@ -1,0 +1,14 @@
+{
+  "name": "The0th",
+  "description": "A blog about javascript and other cool stuff",
+  "version": "0.0.1",
+  "author": "Conner Petzold",
+  "dependencies": {
+    "express": ">= 1.0.0rc4",
+    "connect": ">= 0.2.7",
+    "jade": ">= 0.5.5",
+    "less": ">= 1.0.36",
+    "mongoose": ">= 0.0.3"
+  },
+  "engines": { "node": ">= 0.2.0" }
+}

@@ -1,7 +1,8 @@
 @font-size: 14px;
+@line-height: 20px;
 @font-stack: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
-@min-width: 800px;
-@max-width: 1280px;
+@min-width: 900px;
+@max-width: 1100px;
 
 @sidebar-width: 200px;
 
@@ -53,9 +54,8 @@
 }
 
 body {
-  font-size: @font-size;
   background: @dark;
-  font-family: @font-stack;
+  font: @font-size @font-stack;
   color: @medium;
   padding: 0 1em;
 }
@@ -102,10 +102,6 @@ div, a { .round; }
   padding: 10px;
   padding-top: 5em;
   z-index: 2;
-}
-
-.fixed {
-  width: @min-width;
 }
 
 .cap, .num {
@@ -193,12 +189,13 @@ nav {
 }
 
 article {
-}
-
-section {
+  line-height: @line-height;
   margin: 10px -15px;
   background: @lightest;
   padding: 10px;
   .round;
   .shadow;
+}
+
+section {
 }

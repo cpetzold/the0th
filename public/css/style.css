@@ -17,9 +17,8 @@
   font-size: 0px;
 }
 body {
-  font-size: 14px;
   background: #262626;
-  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444444;
   padding: 0 1em;
 }
@@ -54,8 +53,8 @@ div, a {
   position: relative;
   margin: 20px auto;
   padding-left: 10px;
-  max-width: 1280px;
-  min-width: 800px;
+  max-width: 1100px;
+  min-width: 900px;
 }
 #sidebar {
   position: absolute;
@@ -78,9 +77,6 @@ div, a {
   padding: 10px;
   padding-top: 5em;
   z-index: 2;
-}
-.fixed {
-  width: 800px;
 }
 .cap, .num {
   font-family: Pixel, Arial;
@@ -152,7 +148,8 @@ nav li a:hover .text {
   line-height: 0.7em;
   color: #cccccc;
 }
-section {
+article {
+  line-height: 20px;
   margin: 10px -15px;
   background: #ffffff;
   padding: 10px;

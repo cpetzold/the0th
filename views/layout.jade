@@ -1,12 +1,11 @@
 !!! 5
 html(lang="en")
   head
-    - var site_title = title ? site + " " + title : site
-    title= site_title
+    title= title ? site + " " + title : site
     link(rel='stylesheet', href='css/style.css')
   body(id=bodyid)
   
-    #container.fixed
+    #container
       #content
         nav
           ul
@@ -15,14 +14,19 @@ html(lang="en")
                 .num 0
                 .text= site
                 .cap .com
+            li#navblog
+              a(href='/blog', title='Blog')
+                .num 1
+                .text blog
+                .cap Geeky stuff!
             li#navresume
               a(href='/résumé', title='Résumé')
-                .num 3
+                .num 2
                 .text résumé
                 .cap Web Developer
             li#navprojects
               a(href='/projects', title='Projects')
-                .num 2 
+                .num 3 
                 .text projects
                 .cap on GitHub!
 
