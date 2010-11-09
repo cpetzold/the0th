@@ -21,7 +21,6 @@
 } 
 
 .noli {
-  display: inline;
   list-style-type: none;
 }
 
@@ -35,6 +34,12 @@
   box-shadow: @offset @color;
   -webkit-box-shadow: @offset @color;
   -moz-box-shadow: @offset @color;
+}
+
+.noshadow {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 
 .tshadow(@offset: 0px 2px, @color: @light) {
@@ -57,7 +62,7 @@ body {
   background: @dark;
   font: @font-size @font-stack;
   color: @medium;
-  padding: 0 1em;
+  margin: 0;
 }
 
 header, footer, section, aside, nav, article { display: block; }
@@ -68,42 +73,6 @@ h1, h2, h3, h4, h5 {
 
 a { text-decoration: none; }
 
-div, a { .round; }
-
-.hidden {
-  display: none;
-}
-
-#container {
-  position: relative;
-  margin: 20px auto;
-  padding-left: 10px;
-  max-width: @max-width;
-  min-width: @min-width;
-}
-
-#sidebar {
-  position: absolute;
-  right: 0;
-  top: 30px;
-  background: @light;
-  width: @sidebar-width;
-  height: 450px;
-  .shadow;
-  z-index: -1;
-}
-
-#content {
-  margin-right: @sidebar-width - 10px;
-  border-right: 5px solid @light;
-  padding-top: 2em;
-  background: @lighter;
-  height: 1000px;
-  padding: 10px;
-  padding-top: 5em;
-  z-index: 2;
-}
-
 .cap, .num {
   .pixel;
   color: @light - #222;
@@ -111,8 +80,8 @@ div, a { .round; }
 
 nav {
   font-size: 1.5em;
-  position: absolute;
-  top: -5px;
+  position: fixed;
+  
   
   ul, li {
     margin: 0;
@@ -123,15 +92,18 @@ nav {
     .noli;
     
     a {
+/*      .round(0px 0px 3px 3px);*/
+      width: 75px;
       float: left;
-      margin: 0px 5px;
+      margin-bottom: 1px;
       padding: 8px 15px 10px 15px;
+      background: @lightest;
 
       .text {
         color: @medium;
-      }
-      
+      } 
     }
+    
     a:hover {
       background: @lighter;
       .text { color: @dark; text-decoration: underline; }
@@ -139,13 +111,11 @@ nav {
   }
 }
 
-#me #navme, 
 #projects #navprojects, 
-#resume #navresume {
+#resume #navresume,
+#blog #navblog {
   a {
-    padding-top: 5px;
-    background: @lightest;
-    .shadow;
+    background: transparent;
     
     .num {
       text-decoration: underline;
@@ -157,14 +127,13 @@ nav {
 #logo {
   a {
     background: @primary;
-    .shadow;
     
     .text {
-      color: @lighter;
+      color: @primary * 0.6;
     }
     
     .cap {
-      color: @primary + #444;
+      color: @primary * 0.85;
     }
     
     

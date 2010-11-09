@@ -3,8 +3,12 @@
   src: url('../fonts/pixel.ttf');
 }
 .noli {
-  display: inline;
   list-style-type: none;
+}
+.noshadow {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 .pixel {
   font-family: Pixel, Arial;
@@ -20,7 +24,7 @@ body {
   background: #262626;
   font: 14px Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444444;
-  padding: 0 1em;
+  margin: 0;
 }
 header,
 footer,
@@ -41,43 +45,6 @@ h5 {
 a {
   text-decoration: none;
 }
-div, a {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
-.hidden {
-  display: none;
-}
-#container {
-  position: relative;
-  margin: 20px auto;
-  padding-left: 10px;
-  max-width: 1100px;
-  min-width: 900px;
-}
-#sidebar {
-  position: absolute;
-  right: 0;
-  top: 30px;
-  background: #dddddd;
-  width: 200px;
-  height: 450px;
-  box-shadow: 0px 2px #dddddd;
-  -webkit-box-shadow: 0px 2px #dddddd;
-  -moz-box-shadow: 0px 2px #dddddd;
-  z-index: -1;
-}
-#content {
-  margin-right: 190px;
-  border-right: 5px solid #dddddd;
-  padding-top: 2em;
-  background: #edf2f7;
-  height: 1000px;
-  padding: 10px;
-  padding-top: 5em;
-  z-index: 2;
-}
 .cap, .num {
   font-family: Pixel, Arial;
   font-size: 8px;
@@ -85,21 +52,23 @@ div, a {
 }
 nav {
   font-size: 1.5em;
-  position: absolute;
-  top: -5px;
+  position: fixed;
 }
 nav ul, nav li {
   margin: 0;
   padding: 0;
 }
 nav li {
-  display: inline;
   list-style-type: none;
 }
 nav li a {
+  /*      .round(0px 0px 3px 3px);*/
+
+  width: 75px;
   float: left;
-  margin: 0px 5px;
+  margin-bottom: 1px;
   padding: 8px 15px 10px 15px;
+  background: #ffffff;
 }
 nav li a .text {
   color: #444444;
@@ -111,28 +80,21 @@ nav li a:hover .text {
   color: #262626;
   text-decoration: underline;
 }
-#me #navme a, #projects #navprojects a, #resume #navresume a {
-  padding-top: 5px;
-  background: #ffffff;
-  box-shadow: 0px 2px #dddddd;
-  -webkit-box-shadow: 0px 2px #dddddd;
-  -moz-box-shadow: 0px 2px #dddddd;
+#projects #navprojects a, #resume #navresume a, #blog #navblog a {
+  background: transparent;
 }
-#me #navme a .num, #projects #navprojects a .num, #resume #navresume a .num {
+#projects #navprojects a .num, #resume #navresume a .num, #blog #navblog a .num {
   text-decoration: underline;
   color: #ed1c48;
 }
 #logo a {
   background: #ed1c48;
-  box-shadow: 0px 2px #dddddd;
-  -webkit-box-shadow: 0px 2px #dddddd;
-  -moz-box-shadow: 0px 2px #dddddd;
 }
 #logo a .text {
-  color: #edf2f7;
+  color: #8e112b;
 }
 #logo a .cap {
-  color: #ff608c;
+  color: #c9183d;
 }
 #logo a:hover {
   color: #ffffff;

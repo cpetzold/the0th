@@ -5,38 +5,28 @@ html(lang="en")
     link(rel='stylesheet', href='css/style.css')
   body(id=bodyid)
   
-    #container
-      #content
-        nav
-          ul
-            li#logo
-              a(href='/', title='Home')
-                .num 0
-                .text= site
-                .cap .com
-            li#navblog
-              a(href='/blog', title='Blog')
-                .num 1
-                .text blog
-                .cap Geeky stuff!
-            li#navresume
-              a(href='/résumé', title='Résumé')
-                .num 2
-                .text résumé
-                .cap Web Developer
-            li#navprojects
-              a(href='/projects', title='Projects')
-                .num 3 
-                .text projects
-                .cap on GitHub!
-
-        .clear
-        
-        article!= body
-    
-        
-      #sidebar
-        .num 4
+    nav#menu
+      ul
+        li#logo
+          a(href='/', title='Home')
+            .num 0
+            .text= site
+            .cap .com
+        li#navblog
+          a(href='/', title='Blog')
+            .num 1
+            .text blog
+            .cap Geeky stuff
+        li#navresume
+          a(href='/résumé', title='Résumé')
+            .num 2
+            .text résumé
+            .cap Web Developer
+        li#navprojects
+          a(href='/projects', title='Projects')
+            .num 3 
+            .text projects
+            .cap on GitHub
         
     script(src='js/jquery.min.js', type='text/javascript')
     script(src='js/main.js', type='text/javascript')
