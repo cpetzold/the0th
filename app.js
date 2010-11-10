@@ -1,5 +1,5 @@
 var sys = require('sys'),
-    ext = require('ext'),
+    ext = require('./lib/ext'),
     express = require('express'),
     mongoose = require('mongoose').Mongoose,
     models = require('./lib/models');
@@ -12,7 +12,7 @@ var User = db.model('User'),
     
 var u = new User({
   'username':'cpetzold',
-  'password':'test'
+  'password':'test',
   'name':'conner petzold',
   'email':'cpetzold@gmail.com',
   'type':'admin',
