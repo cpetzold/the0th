@@ -81,7 +81,8 @@ a { text-decoration: none; }
 nav {
   font-size: 1.5em;
   position: fixed;
-  
+  height: 100%;
+  background: @light;
   
   ul, li {
     margin: 0;
@@ -115,11 +116,22 @@ nav {
 #resume #navresume,
 #blog #navblog {
   a {
-    background: transparent;
+    background: @dark;
+    border: 5px solid @light;
+    border-right: 0;
+    padding: 3px 15px 5px 10px;
+    
+    .text {
+      color: @secondary;
+    }
     
     .num {
       text-decoration: underline;
-      color: @primary;
+      color: @light - #444;
+    }
+    
+    .cap {
+      color: @dark + #222;
     }
   }
 }

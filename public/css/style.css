@@ -53,6 +53,8 @@ a {
 nav {
   font-size: 1.5em;
   position: fixed;
+  height: 100%;
+  background: #dddddd;
 }
 nav ul, nav li {
   margin: 0;
@@ -81,11 +83,20 @@ nav li a:hover .text {
   text-decoration: underline;
 }
 #projects #navprojects a, #resume #navresume a, #blog #navblog a {
-  background: transparent;
+  background: #262626;
+  border: 5px solid #dddddd;
+  border-right: 0;
+  padding: 3px 15px 5px 10px;
+}
+#projects #navprojects a .text, #resume #navresume a .text, #blog #navblog a .text {
+  color: #aedaf3;
 }
 #projects #navprojects a .num, #resume #navresume a .num, #blog #navblog a .num {
   text-decoration: underline;
-  color: #ed1c48;
+  color: #999999;
+}
+#projects #navprojects a .cap, #resume #navresume a .cap, #blog #navblog a .cap {
+  color: #484848;
 }
 #logo a {
   background: #ed1c48;
