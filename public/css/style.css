@@ -69,8 +69,9 @@ nav li a {
   width: 75px;
   float: left;
   margin-bottom: 1px;
-  padding: 8px 15px 10px 15px;
+  padding: 8px 10px 10px 15px;
   background: #ffffff;
+  border-right: 5px solid #dddddd;
 }
 nav li a .text {
   color: #444444;
@@ -100,6 +101,8 @@ nav li a:hover .text {
 }
 #logo a {
   background: #ed1c48;
+  border: 0;
+  padding-right: 15px;
 }
 #logo a .text {
   color: #8e112b;
