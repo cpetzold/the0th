@@ -1,10 +1,6 @@
-@font-size: 14px;
-@line-height: 20px;
+@font-size: 26px;
 @font-stack: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
-@min-width: 900px;
-@max-width: 1100px;
-
-@sidebar-width: 200px;
+@width: 800px;
 
 @darkest: #000;
 @dark: #262626;
@@ -16,11 +12,12 @@
 @secondary: #aedaf3;
 
 @font-face { 
-  font-family: Pixel; 
+  font-family: Pixel;
   src: url('../fonts/pixel.ttf'); 
 } 
 
 .noli {
+  display: inline;
   list-style-type: none;
 }
 
@@ -36,19 +33,13 @@
   -moz-box-shadow: @offset @color;
 }
 
-.noshadow {
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-}
-
 .tshadow(@offset: 0px 2px, @color: @light) {
   text-shadow: @offset @color;
 }
 
 .pixel {
   font-family: Pixel, Arial;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .clear {
@@ -59,19 +50,36 @@
 }
 
 body {
+  font-size: @font-size;
   background: @dark;
-  font: @font-size @font-stack;
+  font-family: @font-stack;
   color: @medium;
-  margin: 0;
+  padding: 0 1em;
 }
 
 header, footer, section, aside, nav, article { display: block; }
-h1, h2, h3, h4, h5 {
+ul, li, h1, h2, h3, h4, h5 {
   margin: 0;
   padding: 0;
 }
 
 a { text-decoration: none; }
+
+div, a { .round; }
+
+.hidden {
+  display: none;
+}
+
+#container {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 715px; margin-left: -715px / 2;
+  height: 88px; margin-top: -88px / 2;
+  background: @lighter;
+  .shadow(0px 6px 40px, @darkest+#111);
+}
 
 .cap, .num {
   .pixel;
@@ -80,59 +88,46 @@ a { text-decoration: none; }
 
 nav {
   font-size: 1.5em;
-  position: fixed;
-  height: 100%;
-  background: @light;
-  
-  ul, li {
-    margin: 0;
-    padding: 0;
-  }
-  
+  position: absolute;
+  top: -5px;
   li {
     .noli;
     
     a {
-/*      .round(0px 0px 3px 3px);*/
-      width: 75px;
       float: left;
-      margin-bottom: 1px;
-      padding: 8px 10px 10px 15px;
-      background: @lightest;
-      border-right: 5px solid @light;
+      margin: 0px 5px;
+      padding: 8px 15px 10px 15px;
 
       .text {
         color: @medium;
-      } 
+      }
+      
+      .num {
+        width: 12px;
+        padding: 3px 0px;
+        background: @lighter;
+        text-align: center;
+      }
+      
     }
-    
     a:hover {
-      background: @lighter;
-      .text { color: @dark; text-decoration: underline; }
-    }
-  }
-}
+      background: @lightest;
+      .shadow(0px 4px, @lightest - #444);
 
-#projects #navprojects, 
-#resume #navresume,
-#blog #navblog {
-  a {
-    background: @dark;
-    border: 5px solid @light;
-    border-right: 0;
-    padding: 3px 15px 5px 10px;
-    
-    .text {
-      color: @secondary;
+      .num {
+        text-decoration: underline;
+        color: @primary;
+      }
+      
+      .text {
+        color: @dark;
+      }
     }
     
-    .num {
-      text-decoration: underline;
-      color: @light - #444;
-    }
-    
-    .cap {
-      color: @dark + #222;
+    a:visited {
+      .text {
+/*        color: @medium + #111;*/
+      }
     }
   }
 }
@@ -140,46 +135,27 @@ nav {
 #logo {
   a {
     background: @primary;
-    border: 0;
-    padding-right: 15px;
+    .shadow(0px 4px, @primary - #444);
     
     .text {
-      color: @primary * 0.6;
+      color: @lighter;
     }
     
     .cap {
-      color: @primary * 0.85;
+      color: @primary + #444;
+    }
+    
+    .num {
+      text-decoration: underline;
+      color: @secondary;
+      background: @primary - #222;
     }
     
     
   }
-  a:hover { 
+  a:hover {
+    cursor: default;
     color: @lightest;
+    padding-top: 8px;
   }
-}
-
-#home #logo a .num {
-  text-decoration: underline;
-}
-
-#title {
-  .tshadow(1px 3px);
-}
-
-#subtitle {
-  font-size: 1.3em;
-  line-height: 0.7em;
-  color: @light - #111;   
-}
-
-article {
-  line-height: @line-height;
-  margin: 10px -15px;
-  background: @lightest;
-  padding: 10px;
-  .round;
-  .shadow;
-}
-
-section {
 }

@@ -1,4 +1,23 @@
-section
-  h1 title blah blah
-  p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    
+#container
+  nav#menu
+    ul
+      li#logo
+        a(href='/', title='Home')
+          .num 0
+          .text= title
+          .cap= subtitle
+      li#navblog
+        a(href='http://blog.the0th.com', title='Blog')
+          .num 1
+          .text blog
+          .cap Geeky stuff
+      li#navresume
+        a(href='/résumé', title='Résumé')
+          .num 2
+          .text résumé
+          .cap Web Developer
+      li#navprojects
+        a(href='http://github.com/cpetzold', title='Projects')
+          .num 3 
+          .text projects
+          .cap on GitHub

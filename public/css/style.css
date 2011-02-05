@@ -3,16 +3,12 @@
   src: url('../fonts/pixel.ttf');
 }
 .noli {
+  display: inline;
   list-style-type: none;
-}
-.noshadow {
-  box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
 }
 .pixel {
   font-family: Pixel, Arial;
-  font-size: 8px;
+  font-size: 10px;
 }
 .clear {
   clear: both;
@@ -21,10 +17,11 @@
   font-size: 0px;
 }
 body {
+  font-size: 26px;
   background: #262626;
-  font: 14px Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #444444;
-  margin: 0;
+  padding: 0 1em;
 }
 header,
 footer,
@@ -34,6 +31,8 @@ nav,
 article {
   display: block;
 }
+ul,
+li,
 h1,
 h2,
 h3,
@@ -45,94 +44,91 @@ h5 {
 a {
   text-decoration: none;
 }
+div, a {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.hidden {
+  display: none;
+}
+#container {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 715px;
+  margin-left: -357.5px;
+  height: 88px;
+  margin-top: -44px;
+  background: #edf2f7;
+  box-shadow: 0px 6px 40px #111111;
+  -webkit-box-shadow: 0px 6px 40px #111111;
+  -moz-box-shadow: 0px 6px 40px #111111;
+}
 .cap, .num {
   font-family: Pixel, Arial;
-  font-size: 8px;
+  font-size: 10px;
   color: #bbbbbb;
 }
 nav {
   font-size: 1.5em;
-  position: fixed;
-  height: 100%;
-  background: #dddddd;
-}
-nav ul, nav li {
-  margin: 0;
-  padding: 0;
+  position: absolute;
+  top: -5px;
 }
 nav li {
+  display: inline;
   list-style-type: none;
 }
 nav li a {
-  /*      .round(0px 0px 3px 3px);*/
-
-  width: 75px;
   float: left;
-  margin-bottom: 1px;
-  padding: 8px 10px 10px 15px;
-  background: #ffffff;
-  border-right: 5px solid #dddddd;
+  margin: 0px 5px;
+  padding: 8px 15px 10px 15px;
 }
 nav li a .text {
   color: #444444;
 }
-nav li a:hover {
+nav li a .num {
+  width: 12px;
+  padding: 3px 0px;
   background: #edf2f7;
+  text-align: center;
+}
+nav li a:hover {
+  background: #ffffff;
+  box-shadow: 0px 4px #bbbbbb;
+  -webkit-box-shadow: 0px 4px #bbbbbb;
+  -moz-box-shadow: 0px 4px #bbbbbb;
+}
+nav li a:hover .num {
+  text-decoration: underline;
+  color: #ed1c48;
 }
 nav li a:hover .text {
   color: #262626;
-  text-decoration: underline;
 }
-#projects #navprojects a, #resume #navresume a, #blog #navblog a {
-  background: #262626;
-  border: 5px solid #dddddd;
-  border-right: 0;
-  padding: 3px 15px 5px 10px;
-}
-#projects #navprojects a .text, #resume #navresume a .text, #blog #navblog a .text {
-  color: #aedaf3;
-}
-#projects #navprojects a .num, #resume #navresume a .num, #blog #navblog a .num {
-  text-decoration: underline;
-  color: #999999;
-}
-#projects #navprojects a .cap, #resume #navresume a .cap, #blog #navblog a .cap {
-  color: #484848;
+nav li a:visited .text {
+  /*        color: @medium + #111;*/
+
 }
 #logo a {
   background: #ed1c48;
-  border: 0;
-  padding-right: 15px;
+  box-shadow: 0px 4px #a90004;
+  -webkit-box-shadow: 0px 4px #a90004;
+  -moz-box-shadow: 0px 4px #a90004;
 }
 #logo a .text {
-  color: #8e112b;
+  color: #edf2f7;
 }
 #logo a .cap {
-  color: #c9183d;
+  color: #ff608c;
+}
+#logo a .num {
+  text-decoration: underline;
+  color: #aedaf3;
+  background: #cb0026;
 }
 #logo a:hover {
+  cursor: default;
   color: #ffffff;
-}
-#home #logo a .num {
-  text-decoration: underline;
-}
-#title {
-  text-shadow: 1px 3px #dddddd;
-}
-#subtitle {
-  font-size: 1.3em;
-  line-height: 0.7em;
-  color: #cccccc;
-}
-article {
-  line-height: 20px;
-  margin: 10px -15px;
-  background: #ffffff;
-  padding: 10px;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  box-shadow: 0px 2px #dddddd;
-  -webkit-box-shadow: 0px 2px #dddddd;
-  -moz-box-shadow: 0px 2px #dddddd;
+  padding-top: 8px;
 }
