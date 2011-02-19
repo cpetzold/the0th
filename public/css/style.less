@@ -21,12 +21,6 @@
   list-style-type: none;
 }
 
-.round (@radius: 3px) {
-  -moz-border-radius: @radius;
-  -webkit-border-radius: @radius;
-  border-radius: @radius;
-}
-
 .shadow (@offset: 0px 2px, @color: @light) {
   box-shadow: @offset @color;
   -webkit-box-shadow: @offset @color;
@@ -65,18 +59,17 @@ ul, li, h1, h2, h3, h4, h5 {
 
 a { text-decoration: none; }
 
-div, a { .round; }
-
 .hidden {
   display: none;
 }
 
 #container {
   position: absolute;
-  left: 50%;
+  left: 0px;
   top: 40%;
-  width: 715px; margin-left: -715px / 2;
-  height: 88px; margin-top: -88px / 2;
+  width: 100%;
+  min-width: 800px;
+  height: 88px;
   background: @lighter;
   .shadow(0px 6px 40px, @darkest+#111);
 }
@@ -97,7 +90,7 @@ nav {
       float: left;
       margin: 0px 5px;
       padding: 8px 15px 10px 15px;
-
+      
       .text {
         color: @medium;
       }

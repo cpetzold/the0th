@@ -44,22 +44,16 @@ h5 {
 a {
   text-decoration: none;
 }
-div, a {
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-}
 .hidden {
   display: none;
 }
 #container {
   position: absolute;
-  left: 50%;
+  left: 0px;
   top: 40%;
-  width: 715px;
-  margin-left: -357.5px;
+  width: 100%;
+  min-width: 800px;
   height: 88px;
-  margin-top: -44px;
   background: #edf2f7;
   box-shadow: 0px 6px 40px #111111;
   -webkit-box-shadow: 0px 6px 40px #111111;
