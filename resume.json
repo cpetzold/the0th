@@ -1,0 +1,40 @@
+{
+  "name": { "first": "Conner", "middle": "Allen", "last": "Petzold"}
+, "contact": {
+    "phone": 9704020413
+  , "email": "cpetzold@gmail.com"
+  , "address": {
+      "street": "629 Carolina Street"
+    , "city": "San Francisco"
+    , "state": "California"
+    , "country": "United States"
+    , "zipcode": 94107
+    }
+  }
+, "education": [
+    {
+      "name": "Colorado State University"
+    , "degree": "Bachelor of Science in Computer"
+    , "from": 2006
+    , "to": 2010
+    , "location": {
+        "city": "Fort Collins"
+      , "state": "Colorado"
+      , "country": "United States"
+      }
+    }
+  ]
+, "experience": [
+    {
+      "title": "Front-end Engineer"
+    , "company": "Yahoo!"
+    , "from": 
+    , "location": {
+        "city": "San Francisco"
+      , "state": "California"
+      , "country": "United States"
+      }
+    }
+  ]
+
+}

@@ -1,4 +1,5 @@
-var express = require('express');
+var express = require('express'),
+    fs = require('fs');
 
 var server = module.exports = express.createServer();
 
@@ -21,7 +22,9 @@ server.get('/', function(req, res){
 
 server.get('/:resume', function(req, res, next){
   if (req.params.resume != 'résumé' && req.params.resume != 'resume') return next();
-  res.send({'coming':'soon'});
+  fs.readFile('resume.json', 'utf8', function(err, resume){
+    if (!err) res.send(resume, { 'Content-Type': 'application/json' });
+  });
 });
 
 if (!module.parent) server.listen(8080);
