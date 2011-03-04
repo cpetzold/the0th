@@ -27,4 +27,4 @@ server.get('/:resume', function(req, res, next){
   });
 });
 
-if (!module.parent) server.listen(8080);
+if (!module.parent) server.listen(process.env.PORT || 8080);
