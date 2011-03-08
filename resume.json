@@ -14,26 +14,75 @@
 , "education": [
     {
       "name": "Colorado State University"
-    , "degree": "Bachelor of Science in Computer"
+    , "degree": "Bachelor of Science in Computer Science"
     , "from": 2006
     , "to": 2010
-    , "location": {
-        "city": "Fort Collins"
-      , "state": "Colorado"
-      , "country": "United States"
-      }
+    , "location": "Fort Collins, CO"
     }
   ]
 , "experience": [
     {
       "title": "Front-end Engineer"
     , "company": "Yahoo!"
-    , "from": 
-    , "location": {
-        "city": "San Francisco"
-      , "state": "California"
-      , "country": "United States"
-      }
+    , "to": "current"
+    , "from": 2010
+    , "location": "Santa Clara, CA"
+    , "tags": [
+        "js"
+      , "nodejs"
+      , "yui"
+      , "yql"
+      , "html"
+      , "php"
+      , "mvc"
+      , "java"
+      , "struts"
+      , "sql"
+      , "mdx"
+      , "git"
+      , "svn"
+      , "scrum"
+      ]
+    , "points": [
+        ""
+      ]
+    }
+  , {
+      "title": "Front-end Intern"
+    , "company": "Yahoo!"
+    , "to": 2009
+    , "from": 2008
+    , "location": "Sunnyvale, CA"
+    , "tags": [
+        "php"
+      , "mvc"
+      , "js"
+      , "yui"
+      , "svn"
+      , "mysql"
+      , "scrum"
+      ]
+    , "points": [
+        ""
+      ]
+    }
+  , {
+      "title": "IT Intern"
+    , "company": "Enbridge Inc."
+    , "to": 2008
+    , "from": 2007
+    , "location": "Houston, TX"
+    , "tags": [
+        "support"
+      , "windows"
+      , "os x"
+      , "voip"
+      , "imaging"
+      , "html"
+      ]
+    , "points": [
+        ""
+      ]
     }
   ]
 
