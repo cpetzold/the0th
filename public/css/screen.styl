@@ -1,0 +1,88 @@
+@import 'sites'
+
+// Typography
+fsize = 13px
+fstack = "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
+
+// Colors
+cbg = #fff
+ctext = #343646
+cprimary = #343646
+csecondary = #ACC1E8
+clighter = #f3f3f3
+clight = #e3e3e3
+cmed = #a3b6c0
+
+
+// Mixins
+border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+ 
+// Main style
+body
+  font fsize fstack
+  color ctext
+  background cbg
+  margin 0
+  padding 0
+ 
+a
+ text-decoration none
+
+#container
+  margin 200px 20px 0px
+  
+#resume
+  margin 20px auto
+  width 600px
+  
+h1, h2
+  display inline
+  
+h1
+  color cprimary
+  margin 0
+
+h2
+  color csecondary
+  font-size 1.3em
+  margin 5px 5px 10px
+ 
+nav ul
+    margin 0
+    padding 0
+ 
+nav li
+  display inline-block
+  list-style-type none
+  
+nav li a
+  display inline-block
+  padding 8px 15px 10px 15px
+  margin 5px 5px 0px 0px
+  color ctext
+  background clighter
+  border-bottom 4px solid clight
+  cursor pointer
+  
+
+nav li a:hover
+  border-color cmed
+  padding-bottom 20px
+  .text
+    color black
+  .num::after
+    content: ' ¬'
+    
+nav li a span
+  display block
+  
+nav .text
+  font-size 1.2em
+  
+nav .num, nav .cap
+  font-size 0.7em
+  color cmed
+  

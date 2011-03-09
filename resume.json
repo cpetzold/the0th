@@ -1,5 +1,6 @@
 {
-  "name": { "first": "Conner", "middle": "Allen", "last": "Petzold"}
+  "catchphrase": "",
+  "name": "Conner Petzold"
 , "contact": {
     "phone": 9704020413
   , "email": "cpetzold@gmail.com"
@@ -11,15 +12,13 @@
     , "zipcode": 94107
     }
   }
-, "education": [
-    {
-      "name": "Colorado State University"
-    , "degree": "Bachelor of Computer Science"
-    , "from": 2006
-    , "to": 2010
-    , "location": "Fort Collins, CO"
-    }
-  ]
+, "education": {
+    "name": "Colorado State University"
+  , "degree": "Bachelor of Computer Science"
+  , "from": 2006
+  , "to": 2010
+  , "location": "Fort Collins, CO"
+  }
 , "experience": [
     {
       "title": "Front-end Engineer"

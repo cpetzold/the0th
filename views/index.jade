@@ -1,23 +1,16 @@
 #container
-  nav#menu
+  h1!= title
+  h2!= subtitle
+  
+  nav
     ul
-      li#logo
-        a(href='/', title='Home')
-          .num 0
-          .text= title
-          .cap= subtitle
-      //li#navblog
-      //  a(href='http://the0th.com', title='Blog')
-      //    .num 1
-      //    .text blog
-      //    .cap the0th.com
-      li#navresume
-        a(href='/résumé', title='Résumé')
-          .num 1
-          .text résumé
-          .cap /resume.pdf
-      li#navprojects
-        a(href='http://github.com/cpetzold', title='Projects')
-          .num 2
-          .text projects
-          .cap github.com/cpetzold
+      - nav.forEach(function(item, i){
+        - var path = (item.username ? 'http://' : '') + item.path + (item.username || '')
+        li(class=item.name)
+          a(href=path)
+            span.num= i
+            span.text= item.name
+            span.cap= item.path
+              - if (item.username)
+                strong= item.username
+      - });

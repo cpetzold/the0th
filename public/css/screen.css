@@ -1,0 +1,77 @@
+.linkedin a:hover {
+  border-color: #4e9cc3;
+}
+.facebook a:hover {
+  border-color: #3b5998;
+}
+.github a:hover {
+  border-color: #000;
+}
+body {
+  font: 13px "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+  color: #343646;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+#container {
+  margin: 200px 20px 0px;
+}
+#resume {
+  margin: 20px auto;
+  width: 600px;
+}
+h1,
+h2 {
+  display: inline;
+}
+h1 {
+  color: #343646;
+  margin: 0;
+}
+h2 {
+  color: #acc1e8;
+  font-size: 1.3em;
+  margin: 5px 5px 10px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  list-style-type: none;
+}
+nav li a {
+  display: inline-block;
+  padding: 8px 15px 10px 15px;
+  margin: 5px 5px 0px 0px;
+  color: #343646;
+  background: #f3f3f3;
+  border-bottom: 4px solid #e3e3e3;
+  cursor: pointer;
+}
+nav li a:hover {
+  border-color: #a3b6c0;
+  padding-bottom: 20px;
+}
+nav li a:hover .text {
+  color: #000;
+}
+nav li a:hover .num::after {
+  content: " ¬";
+}
+nav li a span {
+  display: block;
+}
+nav .text {
+  font-size: 1.2em;
+}
+nav .num,
+nav .cap {
+  font-size: 0.7em;
+  color: #a3b6c0;
+}
