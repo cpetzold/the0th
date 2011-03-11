@@ -1,17 +1,23 @@
 #resume
+
+  nav
+    ul
+      li.back
+          a(href='/')
+            span.num 0
+            span.text go back
+            span.cap /
+
   #intro
     h1.name= resume.name
   #contact
     strong phone 
     span.phone= resume.contact.phone.toPhone()
-    br
     
     strong email 
     a(href='mailto:'+resume.contact.email).email= resume.contact.email
-    br
     
     strong address
-    br
     a(href='http://goo.gl/maps/dNj1').address
       span.street= resume.contact.address.street
       br
@@ -20,5 +26,19 @@
       span.state= resume.contact.address.state + ' '
       span.zip= resume.contact.address.zipcode
       
+  .clear
+      
   #education
     
+    
+  #experience
+    - resume.experience.forEach(function(job){
+      h2= job.title
+      h3= job.company
+      
+      ul.tags
+        - job.tags.forEach(function(tag){
+          li= tag
+        -})
+      
+    - })

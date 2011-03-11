@@ -1,7 +1,7 @@
 {
   "name": "The0th",
   "description": "hacks.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Conner Petzold",
   "dependencies": {
     "express": ">= 2.0.0",

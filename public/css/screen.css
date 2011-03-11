@@ -20,10 +20,6 @@ a {
 #container {
   margin: 200px 20px 0px;
 }
-#resume {
-  margin: 20px auto;
-  width: 600px;
-}
 h1,
 h2 {
   display: inline;
@@ -41,7 +37,7 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-nav li {
+li {
   display: inline-block;
   list-style-type: none;
 }
@@ -74,4 +70,52 @@ nav .num,
 nav .cap {
   font-size: 0.7em;
   color: #a3b6c0;
+}
+#resume {
+  margin: 20px auto;
+  width: 750px;
+}
+#resume #intro,
+#resume #contact,
+#resume #experience {
+  margin-bottom: 15px;
+}
+#resume #contact {
+  float: right;
+  text-align: right;
+}
+#resume #contact strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.7em;
+}
+#resume #intro {
+  margin-top: 20px;
+  float: left;
+}
+#resume #intro h1 {
+  font-size: 3em;
+}
+#resume .clear {
+  clear: both;
+}
+#resume h2,
+#resume h3 {
+  margin: 0;
+}
+#resume h2 {
+  color: #343646;
+  margin-top: 20px;
+}
+#resume h3 {
+  color: #a3b6c0;
+}
+#resume .tags {
+  margin: 0;
+  padding: 0;
+}
+#resume .tags li {
+  margin: 8px 8px 0px 0px;
+  padding: 6px;
+  background: #e3e3e3;
 }
