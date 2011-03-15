@@ -21,27 +21,12 @@
       span.state= resume.contact.address.state + ' '
       span.zip= resume.contact.address.zipcode
     
-    nav
-      ul
-        li
-          a(href='/')
-            span.num 0
-            span.text back
-            span.cap / 
-    
-  h2 Education
-  .clear
-  #education
-    h3= resume.education.degree
-    h4= resume.education.name
-    
-    span.setting
-      strong= resume.education.from + ' - ' + resume.education.to + ' '
-      span  • 
-      em= resume.education.location
-    
+    div(style='margin-top: 30px')
+      span Prefer looking at json?
+      br
+      a(href='/résumé.json') /résumé.json
+  
   h2 Experience
-  .clear
   #experience
     - resume.experience.forEach(function(job){
       h3= job.title
@@ -63,3 +48,13 @@
         - })
       
     - })
+    
+  h2 Education
+  #education
+    h3= resume.education.degree
+    h4= resume.education.name
+
+    span.setting
+      strong= resume.education.from + ' - ' + resume.education.to + ' '
+      span  • 
+      em= resume.education.location
