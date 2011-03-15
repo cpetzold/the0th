@@ -35,10 +35,10 @@ a
 
 #container
   margin 200px 20px 0px
+  min-width 800px
   
 h1, h2
-  display none
-  float left
+  display inline-block
   
 .clear
   clear both
@@ -56,7 +56,7 @@ nav ul
     margin 0
     padding 0
  
-li
+nav li, .tags li
   display inline-block
   list-style-type none
   
@@ -72,7 +72,6 @@ nav li a
 
 nav li a:hover
   border-color cmed
-  padding-bottom 20px
   .text
     color black
   .num::after
@@ -103,13 +102,11 @@ nav .num, nav .cap
     left 15px
     width 200px
     text-align right
-    strong
-      display block
-      margin-top 8px
-      font-size 0.7em      
-    strong:first-child
-      margin-top 0px
-    
+    div
+      margin 15px 0px 8px 0px
+        
+  nav
+    display none
   nav a
     text-align left
     font-size 13px
@@ -120,10 +117,11 @@ nav .num, nav .cap
 
   h1, h2
     display block
+    float none
 
   h2
     font-size 1.6em
-    color: cprimary
+    color cprimary
     margin 0px
     padding 0px
     
@@ -143,15 +141,23 @@ nav .num, nav .cap
     float right
     margin 15px 10px 5px 0px
     
+  .points
+    padding 4px 0px 0px 26px
+    li
+      margin 0px 0px 26px 0px
+    
   .tags
-    margin 0
+    margin 2px 0px 20px 0px
     padding 0
     li
-      font-weight bold
-      font-size 10px
-      margin 8px 8px 0px 0px
-      padding 3px 5px
-      background clight
+      margin 6px 6px 0px 0px
+
+  .tags li, #contact strong
+    font-weight bold
+    font-size 10px
+    padding 3px 5px
+    background clighter
+    border-bottom 2px solid clight
       
 
   

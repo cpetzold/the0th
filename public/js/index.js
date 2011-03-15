@@ -1,7 +1,13 @@
 (function($) {
-  
-  $('h1, h2').fadeIn('slow', function() {
-    console.log('hi');
+
+  $('nav a').hover(function(){
+    
+    $(this).animate({"padding-bottom":"15px"}, "fast", "linear");
+    
+  }, function(){
+    
+    $(this).animate({"padding-bottom":"10px"}, "fast", "swing");
+    
   });
   
   

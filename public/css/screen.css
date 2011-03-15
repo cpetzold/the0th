@@ -20,11 +20,11 @@ a {
 }
 #container {
   margin: 200px 20px 0px;
+  min-width: 800px;
 }
 h1,
 h2 {
-  display: none;
-  float: left;
+  display: inline-block;
 }
 .clear {
   clear: both;
@@ -42,7 +42,8 @@ nav ul {
   margin: 0;
   padding: 0;
 }
-li {
+nav li,
+.tags li {
   display: inline-block;
   list-style-type: none;
 }
@@ -57,7 +58,6 @@ nav li a {
 }
 nav li a:hover {
   border-color: #a3b6c0;
-  padding-bottom: 20px;
 }
 nav li a:hover .text {
   color: #000;
@@ -92,13 +92,11 @@ nav .cap {
   width: 200px;
   text-align: right;
 }
-#resume #contact strong {
-  display: block;
-  margin-top: 8px;
-  font-size: 0.7em;
+#resume #contact div {
+  margin: 15px 0px 8px 0px;
 }
-#resume #contact strong:first-child {
-  margin-top: 0px;
+#resume nav {
+  display: none;
 }
 #resume nav a {
   text-align: left;
@@ -111,6 +109,7 @@ nav .cap {
 #resume h1,
 #resume h2 {
   display: block;
+  float: none;
 }
 #resume h2 {
   font-size: 1.6em;
@@ -135,14 +134,24 @@ nav .cap {
   float: right;
   margin: 15px 10px 5px 0px;
 }
+#resume .points {
+  padding: 4px 0px 0px 26px;
+}
+#resume .points li {
+  margin: 0px 0px 26px 0px;
+}
 #resume .tags {
-  margin: 0;
+  margin: 2px 0px 20px 0px;
   padding: 0;
 }
 #resume .tags li {
+  margin: 6px 6px 0px 0px;
+}
+#resume .tags li,
+#resume #contact strong {
   font-weight: bold;
   font-size: 10px;
-  margin: 8px 8px 0px 0px;
   padding: 3px 5px;
-  background: #e3e3e3;
+  background: #f3f3f3;
+  border-bottom: 2px solid #e3e3e3;
 }

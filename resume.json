@@ -41,6 +41,7 @@
       , "git"
       , "svn"
       , "scrum"
+      , "photoshop"
       ]
     , "points": [
         ""
@@ -60,6 +61,7 @@
       , "svn"
       , "mysql"
       , "scrum"
+      , "photoshop"
       ]
     , "points": [
         "Developed many features of a major analytics project involving complex data management and visualizations"
@@ -79,7 +81,7 @@
       , "windows"
       , "os x"
       , "voip"
-      , "imaging"
+      , "photoshop"
       , "html"
       ]
     , "points": [

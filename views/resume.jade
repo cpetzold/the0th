@@ -1,16 +1,18 @@
 #resume
-
-  h1 Conner Petzold
-  .clear
        
   #contact
-    strong phone 
+    h1 Conner Petzold
+    
+    div
+      strong phone
     span.phone= resume.contact.phone.toPhone()
 
-    strong email 
+    div
+      strong email
     a(href='mailto:'+resume.contact.email).email= resume.contact.email
 
-    strong address
+    div
+      strong address
     a(href='http://goo.gl/maps/dNj1').address
       span.street= resume.contact.address.street
       br
@@ -61,5 +63,3 @@
         - })
       
     - })
-    
-script(type='text/javascript', src='js/resume.js')
