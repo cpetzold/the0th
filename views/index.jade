@@ -1,6 +1,7 @@
 #container
   h1!= title
   h2!= subtitle
+  .clear
   
   nav
     ul
@@ -14,3 +15,5 @@
               - if (item.username)
                 strong= item.username
       - });
+      
+script(type='text/javascript', src='js/index.js')

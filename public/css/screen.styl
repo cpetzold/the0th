@@ -12,6 +12,7 @@ csecondary = #ACC1E8
 clighter = #f3f3f3
 clight = #e3e3e3
 cmed = #a3b6c0
+cdark = #70777f
 
 
 // Mixins
@@ -30,12 +31,17 @@ body
  
 a
  text-decoration none
+ color cdark
 
 #container
   margin 200px 20px 0px
   
 h1, h2
-  display inline
+  display none
+  float left
+  
+.clear
+  clear both
   
 h1
   color cprimary
@@ -84,45 +90,67 @@ nav .num, nav .cap
   
   
 #resume
-  margin 20px auto
+  font-size 11px
+  margin 15px 0px 0px 250px
   width 750px
   
-  #intro, #contact, #experience
-    margin-bottom 15px
+  #education, #experience
+    margin 0px 0px 10px 5px
     
   #contact
-    float right
+    position absolute
+    top 15px
+    left 15px
+    width 200px
     text-align right
     strong
       display block
       margin-top 8px
-      font-size 0.7em
-      
-  #intro
-    margin-top 20px
-    float left
-    h1
-      font-size 3em
-  
-  .clear
-    clear both
+      font-size 0.7em      
+    strong:first-child
+      margin-top 0px
     
-  h2, h3
-    margin 0
+  nav a
+    text-align left
+    font-size 13px
+    margin 25px 0px 0px 0px
     
+  nav a:hover
+    padding automatic
+
+  h1, h2
+    display block
+
   h2
-    color cprimary
-    margin-top 20px
+    font-size 1.6em
+    color: cprimary
+    margin 0px
+    padding 0px
+    
+  h3, h4
+    display inline-block
+    margin 10px 10px 5px 0px
     
   h3
-    color cmed
+    font-size 1.3em
+    color cdark
+    
+  h4
+    font-size 1.2em
+    color csecondary
+    
+  .setting
+    float right
+    margin 15px 10px 5px 0px
     
   .tags
     margin 0
     padding 0
     li
+      font-weight bold
+      font-size 10px
       margin 8px 8px 0px 0px
-      padding 6px
+      padding 3px 5px
       background clight
       
 

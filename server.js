@@ -25,7 +25,7 @@ server.get('/', function(req, res){
         title: 'Conner Petzold',
         subtitle: 'Web developer',
         nav: [
-          // { name: 'résumé', path: '/résumé' },
+          { name: 'résumé', path: '/résumé' },
           // { name: 'projects', path: '/projects' },
           { name: 'github', path: 'github.com/', username: 'cpetzold' },
           { name: 'twitter', path: 'twitter.com/', username: 'cpetzold' },

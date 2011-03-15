@@ -16,13 +16,18 @@ body {
 }
 a {
   text-decoration: none;
+  color: #70777f;
 }
 #container {
   margin: 200px 20px 0px;
 }
 h1,
 h2 {
-  display: inline;
+  display: none;
+  float: left;
+}
+.clear {
+  clear: both;
 }
 h1 {
   color: #343646;
@@ -72,16 +77,19 @@ nav .cap {
   color: #a3b6c0;
 }
 #resume {
-  margin: 20px auto;
+  font-size: 11px;
+  margin: 15px 0px 0px 250px;
   width: 750px;
 }
-#resume #intro,
-#resume #contact,
+#resume #education,
 #resume #experience {
-  margin-bottom: 15px;
+  margin: 0px 0px 10px 5px;
 }
 #resume #contact {
-  float: right;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 200px;
   text-align: right;
 }
 #resume #contact strong {
@@ -89,33 +97,52 @@ nav .cap {
   margin-top: 8px;
   font-size: 0.7em;
 }
-#resume #intro {
-  margin-top: 20px;
-  float: left;
+#resume #contact strong:first-child {
+  margin-top: 0px;
 }
-#resume #intro h1 {
-  font-size: 3em;
+#resume nav a {
+  text-align: left;
+  font-size: 13px;
+  margin: 25px 0px 0px 0px;
 }
-#resume .clear {
-  clear: both;
+#resume nav a:hover {
+  padding: automatic;
 }
-#resume h2,
-#resume h3 {
-  margin: 0;
+#resume h1,
+#resume h2 {
+  display: block;
 }
 #resume h2 {
+  font-size: 1.6em;
   color: #343646;
-  margin-top: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+#resume h3,
+#resume h4 {
+  display: inline-block;
+  margin: 10px 10px 5px 0px;
 }
 #resume h3 {
-  color: #a3b6c0;
+  font-size: 1.3em;
+  color: #70777f;
+}
+#resume h4 {
+  font-size: 1.2em;
+  color: #acc1e8;
+}
+#resume .setting {
+  float: right;
+  margin: 15px 10px 5px 0px;
 }
 #resume .tags {
   margin: 0;
   padding: 0;
 }
 #resume .tags li {
+  font-weight: bold;
+  font-size: 10px;
   margin: 8px 8px 0px 0px;
-  padding: 6px;
+  padding: 3px 5px;
   background: #e3e3e3;
 }
