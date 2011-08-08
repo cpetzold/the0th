@@ -16,6 +16,7 @@ server.configure(function(){
   server.use(server.router);
   server.use(stylus.middleware(__dirname + '/public'));
   server.use(express.static(__dirname + '/public'));
+  server.use(express.favicon(__dirname + '/public/favicon.png')); 
 });
 
 server.get('/', function(req, res){
@@ -47,7 +48,7 @@ server.get('/:resume.:format?', function(req, res, next){
       } else {
         res.render('resume.jade', {
           locals: {
-            title: 'Conner Petzold - Résumé',
+            title: 'Résumé',
             resume: JSON.parse(resume)
           }
         });
