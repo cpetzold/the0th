@@ -29,6 +29,7 @@ server.get('/', function(req, res){
           // { name: 'projects', path: '/projects' },
           { name: 'github', path: 'github.com/', username: 'cpetzold' },
           { name: 'twitter', path: 'twitter.com/', username: 'cpetzold' },
+          { name: 'google+', path: 'profiles.google.com/', username: 'cpetzold' },
           { name: 'linkedin', path: 'linkedin.com/in/', username: 'cpetzold' },
           { name: 'facebook', path: 'facebook.com/', username: 'conner' }
         ]
@@ -56,7 +57,7 @@ server.get('/:resume.:format?', function(req, res, next){
 });
 
 if (!module.parent) {
-  var port = process.env.PORT || 8080;
+  var port = process.env.PORT || 80;
   server.listen(port);
   log('listening on port', port);
 }

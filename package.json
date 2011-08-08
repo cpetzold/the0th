@@ -4,10 +4,10 @@
   "version": "0.0.2",
   "author": "Conner Petzold",
   "dependencies": {
-    "express": "2.0.0beta3",
-    "jade": ">= 0.5.5",
-    "stylus": ">= 0.7.2",
-    "logging": ">= 2.0.4"
+    "express": "2.4.3",
+    "jade": "0.13.0",
+    "stylus": "0.13.9",
+    "logging": "2.0.4"
   },
   "engines": { "node": ">= 0.4.0" }
 }
