@@ -1,7 +1,51 @@
 !!! 5
-html(lang="en")
+html
   head
-    title The0th · #{title}
-    link(rel='stylesheet', href='css/screen.css')
-    script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
+    title The0th
+    link(rel='stylesheet', href='screen.css')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
+    script(src='/socket.io/socket.io.js')
+    script
+      s = io.connect('http://localhost');
+      
+      $(function() {
+        var $e = $('.e')
+          , $w = $(document)
+          , i = 5
+          , ww = $w.width() / 2
+          , wh = $w.height() / 2
+          , dark = '#101010'
+          , light = '#ccc';
+        
+        $(document).mousemove(function(e) {
+          var x = e.clientX
+            , y = e.clientY;
+          
+          $e.each(function() {
+            var $el = $(this)
+              , o = $el.offset()
+              , w = 110
+              , h = $el.innerHeight()
+              , dx = o.left + (w / 2) - x
+              , dy = o.top + (h / 2) - y
+              , left = (dx > 0)
+              , top = (dy > 0);
+              
+            var bw = -i * (dx / ww)
+              , bh = -i * (dy / wh);
+          
+            var shadow = 'inset ' + bw + 'px ' + bh + 'px ';
+            shadow += ($el.attr('id') == 't0') ? light : dark;
+            
+            $el.css({
+              boxShadow: shadow
+            });
+            $el.find('span').css({
+                right: 6 - bw
+              , bottom: 4 - bh
+            });
+          });
+        });
+      }); 
+
   body!= body
