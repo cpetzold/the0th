@@ -23,6 +23,10 @@ body {
   height: 60px;
   margin: 0px 3px 0px 0px;
   background: #181818;
+  transition: background-color 1s ease-in;
+}
+.e:hover {
+  background: #1a1a1a;
 }
 #t0 {
   color: #222;

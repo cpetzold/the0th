@@ -5,40 +5,4 @@ html
     link(rel='stylesheet', href='screen.css')
     script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
     script(src='/socket.io/socket.io.js')
-    script
-      s = io.connect('http://localhost');
-      
-      $(function() {
-        var $e = $('.e')
-          , $w = $(document)
-          , i = 5
-          , ww = $w.width() / 2
-          , wh = $w.height() / 2
-          , dark = '#101010'
-          , light = '#ccc';
-        
-        $(document).mousemove(function(e) {
-          var x = e.clientX
-            , y = e.clientY;
-          
-          $e.each(function() {
-            var $el = $(this)
-              , o = $el.offset()
-              , w = 110
-              , h = $el.innerHeight()
-              , dx = o.left + (w / 2) - x
-              , dy = o.top + (h / 2) - y;
-              
-            var distance = i * Math.sqrt((dx*dx)+(dy*dy)) / wh
-              , shadow = '0px ' + distance + 'px ';
-
-            shadow += ($el.attr('id') == 't0') ? light : dark;
-            
-            $el.css({
-              boxShadow: shadow
-            });
-          });
-        });
-      }); 
-
   body!= body
