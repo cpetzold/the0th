@@ -27,22 +27,15 @@ html
               , w = 110
               , h = $el.innerHeight()
               , dx = o.left + (w / 2) - x
-              , dy = o.top + (h / 2) - y
-              , left = (dx > 0)
-              , top = (dy > 0);
+              , dy = o.top + (h / 2) - y;
               
-            var bw = -i * (dx / ww)
-              , bh = -i * (dy / wh);
-          
-            var shadow = 'inset ' + bw + 'px ' + bh + 'px ';
+            var distance = i * Math.sqrt((dx*dx)+(dy*dy)) / wh
+              , shadow = '0px ' + distance + 'px ';
+
             shadow += ($el.attr('id') == 't0') ? light : dark;
             
             $el.css({
               boxShadow: shadow
-            });
-            $el.find('span').css({
-                right: 6 - bw
-              , bottom: 4 - bh
             });
           });
         });
