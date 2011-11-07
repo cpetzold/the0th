@@ -1,8 +1,10 @@
 !!! 5
 html
   head
-    title The0th
+    title ...
     link(rel='stylesheet', href='screen.css')
-    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js')
+    script(src= 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js')
     script(src='/socket.io/socket.io.js')
-  body!= body
+  body
+    != body
+    script(src= 'js/index.js')

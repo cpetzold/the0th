@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "2.x",
     "mongoose": "2.x",
+    "everyauth": "0.x",
     "stylus": "0.17.x",
     "socket.io": "0.x",
     "cluster": "0.x",
