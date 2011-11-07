@@ -19,6 +19,8 @@ server.set('io', io);
 config(server);
 
 server.get('/', function(req, res) {
+  if (!req.loggedIn) return res.redirect('/auth/github');
+
   console.log(req.loggedIn, req.user);
   res.render('index');
 });

@@ -30,12 +30,15 @@ module.exports = function(server) {
       .findOrCreateUser(function(session, token, tokenExtras, ghUser) {
         var promise = this.Promise();
         User.findOrCreate(token, ghUser, function(e, user) {
-          console.log(e, user);
           promise.fulfill(e || user);
         });
         return promise;
       })
       .redirectPath('/');
+    
+    everyauth.everymodule.findUserById( function (userId, callback) {
+      User.findById(userId, callback);
+    });
 
     io.set('log level', 1);
     
