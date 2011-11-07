@@ -2,6 +2,7 @@ var fs = require('fs')
   , express = require('express')
   , mongoose = require('mongoose')
   , everyauth = require('everyauth')
+  , jadevu = require('jadevu')
   , io = require('socket.io')
   , config = require('./config')
   , utils = require('./utils')
@@ -11,7 +12,6 @@ var server = express.createServer()
   , io = io.listen(server)
   , User = require('./models/user')
 
-everyauth.helpExpress(server);
 
 server.set('db', db);
 server.set('io', io);
@@ -20,8 +20,8 @@ config(server);
 
 server.get('/', function(req, res) {
   if (!req.loggedIn) return res.redirect('/auth/github');
+  console.log(req.user);
 
-  console.log(req.loggedIn, req.user);
   res.render('index');
 });
 

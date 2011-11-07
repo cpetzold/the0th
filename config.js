@@ -59,6 +59,8 @@ module.exports = function(server) {
     }));
     server.use(express.static(__dirname + '/public'));
     server.use(express.favicon(__dirname + '/public/favicon.png')); 
+    
+    everyauth.helpExpress(server);
   });
 
 };

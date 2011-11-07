@@ -11,6 +11,7 @@
     "socket.io": "0.x",
     "cluster": "0.x",
     "jade": "0.x",
+    "jadevu": "0.x",
     "logging": "2.0.11"
   }
 }
