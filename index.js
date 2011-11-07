@@ -1,18 +1,25 @@
 var fs = require('fs')
   , express = require('express')
+  , mongoose = require('mongoose')
   , everyauth = require('everyauth')
   , io = require('socket.io')
-  , stylus = require('stylus')
   , config = require('./config')
   , utils = require('./utils')
 
 var server = express.createServer()
+  , db = mongoose.connect('mongodb://localhost/the0th')
+  , io = io.listen(server)
+  , User = require('./models/user')
 
-server.set('io', io.listen(server));
+everyauth.helpExpress(server);
+
+server.set('db', db);
+server.set('io', io);
+
 config(server);
 
-
 server.get('/', function(req, res) {
+  console.log(req.loggedIn, req.user);
   res.render('index');
 });
 
@@ -26,5 +33,4 @@ io.sockets.on('connection', function(s) {
   });
 });
 
-//everyauth.helpExpress(server);
 server.listen(8080);
