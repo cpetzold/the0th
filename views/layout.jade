@@ -1,10 +1,28 @@
 !!! 5
 html
   head
-    title ...
+    title The0th
     link(rel='stylesheet', href='screen.css')
     script(src= 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js')
-    script(src='/socket.io/socket.io.js')
+    script(src= 'js/jquery.pjax.js')
   body
-    != body
+  
+    header
+      hgroup
+        h1 The0th
+        h2 a blog about node.js
+        
+    nav
+      ul
+        li: a(href= '/')
+          span.num 0
+          span.text The0th
+          span.cap /
+        li: a(href= '/about')
+          span.num 1
+          span.text About
+          span.cap /about
+    
+    section#content!= body
+    
     script(src= 'js/index.js')

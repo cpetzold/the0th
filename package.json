@@ -5,11 +5,8 @@
   "author": "Conner Petzold",
   "dependencies": {
     "express": "2.x",
-    "mongoose": "2.x",
-    "everyauth": "0.x",
+    "reed": "0.9.x",
     "stylus": "0.17.x",
-    "socket.io": "0.x",
-    "cluster": "0.x",
     "jade": "0.x",
     "jadevu": "0.x",
     "logging": "2.0.11"

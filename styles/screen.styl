@@ -1,40 +1,57 @@
 fsize = 13px
 fstack = "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
 
+cbg = #fff
+ctext = #343646
+cprimary = #343646
+csecondary = #ACC1E8
+clighter = #f3f3f3
+clight = #e3e3e3
+cmed = #a3b6c0
+cdark = #70777f
+
 body
   font fsize fstack
-  color: #fff 
-  background: #222
-  margin 0
-  padding 0
-  overflow: hidden
-
-#c
-  position: absolute
-  top: 40%
-  left: 20%
-  height: 60px
-  width: 200%
-  padding: 30px
-  overflow: hidden
-
-.e
-  position: relative
-  float: left
-  overflow: hidden
-  width: 110px
-  height: 60px
-  margin: 0px 3px 0px 0px
-  background: #181818
-  transition: background-color 1s ease-in
-  &:hover
-    background: lighten(#181818, 1%)
-
-#t0
-  color: #222
+  color: #222 
   background: #fff
-  span
-    position: absolute
-    bottom: 4px
-    right: 6px
-    font-size: 25px
+  
+a
+  text-decoration none
+  color cdark
+  
+nav ul
+  margin: 0
+  padding: 0
+  .text
+    font-size 1.2em
+  
+  .num, .cap
+    font-size 0.7em
+    color cmed
+ 
+  li
+    display inline-block
+    list-style-type none
+  
+    a
+      display inline-block
+      padding 8px 15px 10px 15px
+      margin 5px 5px 0px 0px
+      color ctext
+      background clighter
+      border-bottom 4px solid clight
+      cursor pointer
+      &:hover
+        border-color cmed
+        .text
+          color black
+        .num::after
+          content: ' ¬'
+    
+    span
+      display block
+  
+  
+.fb-comments,
+.fb-comments iframe[style]
+  width: 100% !important

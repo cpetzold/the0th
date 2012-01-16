@@ -1,0 +1,5 @@
+article
+  header
+    a(href= post.id): h1= post.title
+    time(datetime= post.published)= post.published_formatted
+  section!= post.body
