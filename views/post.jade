@@ -3,3 +3,5 @@ article
     a(href= post.id): h1= post.title
     time(datetime= post.published)= post.published_formatted
   section!= post.body
+  - if (true || comments)
+    .fb-comments(data-href= 'http://the0th.com', data-num-posts='5')

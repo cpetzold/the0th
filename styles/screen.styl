@@ -1,5 +1,6 @@
-fsize = 13px
-fstack = "Lucida Grande", Tahoma, Verdana, Arial, sans-serif
+@import 'frameless'
+
+fstack = 'Lucida Grande', Tahoma, Verdana, Arial, sans-serif
 
 cbg = #fff
 ctext = #343646
@@ -11,47 +12,197 @@ cmed = #a3b6c0
 cdark = #70777f
 
 body
-  font fsize fstack
-  color: #222 
+  font-family: fstack
+  color: ctext
   background: #fff
+  -webkit-tap-highlight-color: rgba(csecondary, 0.62)
+  
+::selection,
+::-moz-selection
+  background: #eee
+  
+pre code
+  &::selection,
+  &::-moz-selection,
+  span::selection,
+  span::-moz-selection
+    background: #777
+
+img::selection,
+img::-moz-selection
+  background: transparent
   
 a
-  text-decoration none
-  color cdark
+  text-decoration: none
+  color: ctext
   
+h1, h2, h3, h4
+  font-weight: normal
+  margin: 1em 0 0.3em
+  color: #000
+  
+section header
+  margin: 1em 0 0.8em
+  h1
+    font-size: 2em
+    margin: 0
+    color: cprimary
+  time
+    display: inline-block
+    font-size: 0.7em
+    padding: 0.4em 0.6em
+    margin: 0.3em 0
+    color: cbg
+    background: csecondary
+    
+section
+  p
+    line-height: 1.8em
+    text-align: justify
+  h1
+    font-size: 1.4em
+  h2
+    font-size: 1.2em
+  h3
+    font-size: 1em
+    font-weight: bold
+  
+#container
+  cols: 16
+  margin: auto
+  
+#logo .text
+  font-weight: bold
+  
+nav
+  width: 100%
+  height: 74px
+  margin: 10px 0
+  overflow: hidden
 nav ul
+  position: static
+  width: 3000px
   margin: 0
   padding: 0
   .text
-    font-size 1.2em
+    font-size: 1.2em
   
   .num, .cap
-    font-size 0.7em
-    color cmed
+    font-size: 0.7em
+    color: cmed
  
   li
-    display inline-block
-    list-style-type none
+    display: inline-block
+    list-style-type: none
   
-    a
-      display inline-block
-      padding 8px 15px 10px 15px
-      margin 5px 5px 0px 0px
-      color ctext
-      background clighter
-      border-bottom 4px solid clight
-      cursor pointer
+    .empty
+      opacity: 0.3
+    a, .empty
+      display: inline-block
+      cols: 2
+      height: 70px
+      margin-right: unit((24/16), 'em')
+      vertical-align: top
+      color: ctext
+      background: clighter
+      border-bottom: 4px solid clight
+      .in
+        padding: 8px 15px 10px 15px
       &:hover
-        border-color cmed
+        border-color: cmed
         .text
-          color black
+          color: black
         .num::after
           content: ' ¬'
     
     span
       display block
-  
+      
+      
+      
+@media screen and (max-width: 1440px)
+  #container
+    cols: 12
+    
+@media screen and (max-width: 1024px)
+  #container
+    cols: 10
+    
+@media screen and (max-width: 800px)
+  #container
+    cols: 8
+    
+    
+pre code
+  display: block
+  padding: 1.3em 1.5em
+  margin: 1em 0
+  font-family: 'Andale Mono', 'Lucida Console', Consolas, monospace
+  font-size: 0.9em
+  line-height: 1.5em
+  background: #303030
+  color: #bbb
+  border-bottom: 0.5em solid #222
+
+  .keyword, .literal, .change, .winutils, .flow, .lisp .title, .tex .special
+    color: white
+
+  .string, .function .title, .class .title,
+  .haskell .label, .ini .title, .tag .value,
+  .css .rules .value,
+  .processor,
+  .ruby .symbol, .ruby .symbol .string, .ruby .symbol .keyword,
+  .ruby .symbol .keymethods, .ruby .instancevar, .ruby .class .parent,
+  .built_in, .sql .aggregate,
+  .django .template_tag, .django .variable,
+  .attr_selector, .pseudo, .addition, .stream, .envvar,
+  .apache .tag, .apache .cbracket,
+  .tex .command, .input_number
+    color: csecondary
+
+  .comment, .java .annotation, .python .decorator,
+  .template_comment, .pi, .doctype, .deletion,
+  .shebang, .apache .sqbracket, .tex .formula
+    color: #777
+
+
+  .keyword,
+  .css .id,
+  .phpdoc,
+  .function .title,
+  .class .title,
+  .haskell .label,
+  .vbscript .built_in,
+  .sql .aggregate,
+  .rsl .built_in,
+  .smalltalk .class,
+  .xml .tag .title,
+  .diff .header,
+  .chunk,
+  .winutils,
+  .bash .variable,
+  .lisp .title,
+  .apache .tag,
+  .tex .special
+    color: white
+    
+  .literal
+    color: #ff5a5a
+
+  .xml .css,
+  .xml .javascript,
+  .xml .vbscript,
+  .tex .formula
+    opacity: 0.5;
+
+    
+.fb-comments
+  margin-top: 1em
   
 .fb-comments,
-.fb-comments iframe[style]
+.fb-comments iframe,
+.fb_ltr
   width: 100% !important
+  
+.fb_iframe_widget
+  display: block !important

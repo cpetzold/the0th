@@ -1,6 +1,8 @@
 var fs = require('fs')
   , express = require('express')
   , reed = require('reed')
+  , highlight = require('highlight').Highlight
+  , moment = require('moment')
   , jadevu = require('jadevu')
   , stylus = require('stylus');
 
@@ -27,7 +29,8 @@ server.configure(function() {
 server.get('/', function(req, res) {
   reed.all(function(e, posts) {
     var posts = posts.map(function(post) {
-      post.metadata.body = post.htmlContent;
+      post.metadata.body = highlight(post.htmlContent, false, true);
+      post.metadata.published_formatted = moment(post.metadata.published).format('MMMM Do, YYYY');
       return post.metadata;
     });
     
@@ -46,7 +49,7 @@ server.get('/:page', function(req, res, next) {
       return next();
     }
     
-    page.body = body;
+    page.body = highlight(body, false, true);
     res.render('page', {
         page: page
       , layout: !req.header('X-PJAX')
@@ -61,7 +64,9 @@ server.get('/:post', function(req, res, next) {
       return res.send(404);
     }
     
-    post.body = body;
+    post.body = highlight(body, false, true);
+    post.published_formatted = moment(post.published).format('MMMM Do, YYYY');
+
     res.render('post', {
         post: post
       , layout: !req.header('X-PJAX')

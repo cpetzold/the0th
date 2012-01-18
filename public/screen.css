@@ -1,13 +1,235 @@
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+audio,
+canvas,
+video {
+  display: block;
+}
+html {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
 body {
-  font: 13px "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
-  color: #222;
+  min-height: 100%;
+  font-size: 100%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub sup,
+sup sup {
+  top: -0.5em;
+}
+sub sub,
+sup sub {
+  bottom: -0.25em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+b,
+strong {
+  font-weight: bold;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a img,
+img {
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+}
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  font-size: 100%;
+  line-height: normal;
+  vertical-align: baseline;
+}
+input button,
+textarea button,
+button button,
+select button,
+input html input[type="button"],
+textarea html input[type="button"],
+button html input[type="button"],
+select html input[type="button"],
+input input[type="reset"],
+textarea input[type="reset"],
+button input[type="reset"],
+select input[type="reset"],
+input input[type="submit"],
+textarea input[type="submit"],
+button input[type="submit"],
+select input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+input input[type="checkbox"],
+textarea input[type="checkbox"],
+button input[type="checkbox"],
+select input[type="checkbox"],
+input input[type="radio"],
+textarea input[type="radio"],
+button input[type="radio"],
+select input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input textarea,
+textarea textarea,
+button textarea,
+select textarea {
+  overflow: auto;
+}
+@media screen and (max-width: 1px) {
+  body {
+    font-size: 14/16em;
+  }
+}
+@media screen and (max-width: 1px) {
+  body {
+    font-size: 18/16em;
+  }
+}
+body {
+  font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+  color: #343646;
   background: #fff;
+  -webkit-tap-highlight-color: rgba(172,193,232,0.62);
+}
+::selection,
+::-moz-selection {
+  background: #eee;
+}
+pre code::selection,
+pre code::-moz-selection,
+pre code span::selection,
+pre code span::-moz-selection {
+  background: #777;
+}
+img::selection,
+img::-moz-selection {
+  background: transparent;
 }
 a {
   text-decoration: none;
-  color: #70777f;
+  color: #343646;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  margin: 1em 0 0.3em;
+  color: #000;
+}
+section header {
+  margin: 1em 0 0.8em;
+}
+section header h1 {
+  font-size: 2em;
+  margin: 0;
+  color: #343646;
+}
+section header time {
+  display: inline-block;
+  font-size: 0.7em;
+  padding: 0.4em 0.6em;
+  margin: 0.3em 0;
+  color: #fff;
+  background: #acc1e8;
+}
+section p {
+  line-height: 1.8em;
+  text-align: justify;
+}
+section h1 {
+  font-size: 1.4em;
+}
+section h2 {
+  font-size: 1.2em;
+}
+section h3 {
+  font-size: 1em;
+  font-weight: bold;
+}
+#container {
+  width: 70.5em;
+  margin: auto;
+}
+#logo .text {
+  font-weight: bold;
+}
+nav {
+  width: 100%;
+  height: 74px;
+  margin: 10px 0;
+  overflow: hidden;
 }
 nav ul {
+  position: static;
+  width: 3000px;
   margin: 0;
   padding: 0;
 }
@@ -23,28 +245,152 @@ nav ul li {
   display: inline-block;
   list-style-type: none;
 }
-nav ul li a {
+nav ul li .empty {
+  opacity: 0.3;
+}
+nav ul li a,
+nav ul li .empty {
   display: inline-block;
-  padding: 8px 15px 10px 15px;
-  margin: 5px 5px 0px 0px;
+  width: 7.5em;
+  height: 70px;
+  margin-right: 1.5em;
+  vertical-align: top;
   color: #343646;
   background: #f3f3f3;
   border-bottom: 4px solid #e3e3e3;
-  cursor: pointer;
 }
-nav ul li a:hover {
+nav ul li a .in,
+nav ul li .empty .in {
+  padding: 8px 15px 10px 15px;
+}
+nav ul li a:hover,
+nav ul li .empty:hover {
   border-color: #a3b6c0;
 }
-nav ul li a:hover .text {
+nav ul li a:hover .text,
+nav ul li .empty:hover .text {
   color: #000;
 }
-nav ul li a:hover .num::after {
+nav ul li a:hover .num::after,
+nav ul li .empty:hover .num::after {
   content: " ¬";
 }
 nav ul li span {
   display: block;
 }
+@media screen and (max-width: 1440px) {
+  #container {
+    width: 52.5em;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #container {
+    width: 43.5em;
+  }
+}
+@media screen and (max-width: 800px) {
+  #container {
+    width: 34.5em;
+  }
+}
+pre code {
+  display: block;
+  padding: 1.3em 1.5em;
+  margin: 1em 0;
+  font-family: "Andale Mono", "Lucida Console", Consolas, monospace;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  background: #303030;
+  color: #bbb;
+  border-bottom: 0.5em solid #222;
+}
+pre code .keyword,
+pre code .literal,
+pre code .change,
+pre code .winutils,
+pre code .flow,
+pre code .lisp .title,
+pre code .tex .special {
+  color: #fff;
+}
+pre code .string,
+pre code .function .title,
+pre code .class .title,
+pre code .haskell .label,
+pre code .ini .title,
+pre code .tag .value,
+pre code .css .rules .value,
+pre code .processor,
+pre code .ruby .symbol,
+pre code .ruby .symbol .string,
+pre code .ruby .symbol .keyword,
+pre code .ruby .symbol .keymethods,
+pre code .ruby .instancevar,
+pre code .ruby .class .parent,
+pre code .built_in,
+pre code .sql .aggregate,
+pre code .django .template_tag,
+pre code .django .variable,
+pre code .attr_selector,
+pre code .pseudo,
+pre code .addition,
+pre code .stream,
+pre code .envvar,
+pre code .apache .tag,
+pre code .apache .cbracket,
+pre code .tex .command,
+pre code .input_number {
+  color: #acc1e8;
+}
+pre code .comment,
+pre code .java .annotation,
+pre code .python .decorator,
+pre code .template_comment,
+pre code .pi,
+pre code .doctype,
+pre code .deletion,
+pre code .shebang,
+pre code .apache .sqbracket,
+pre code .tex .formula {
+  color: #777;
+}
+pre code .keyword,
+pre code .css .id,
+pre code .phpdoc,
+pre code .function .title,
+pre code .class .title,
+pre code .haskell .label,
+pre code .vbscript .built_in,
+pre code .sql .aggregate,
+pre code .rsl .built_in,
+pre code .smalltalk .class,
+pre code .xml .tag .title,
+pre code .diff .header,
+pre code .chunk,
+pre code .winutils,
+pre code .bash .variable,
+pre code .lisp .title,
+pre code .apache .tag,
+pre code .tex .special {
+  color: #fff;
+}
+pre code .literal {
+  color: #ff5a5a;
+}
+pre code .xml .css,
+pre code .xml .javascript,
+pre code .xml .vbscript,
+pre code .tex .formula {
+  opacity: 0.5;
+}
+.fb-comments {
+  margin-top: 1em;
+}
 .fb-comments,
-.fb-comments iframe[style] {
+.fb-comments iframe,
+.fb_ltr {
   width: 100% !important;
+}
+.fb_iframe_widget {
+  display: block !important;
 }

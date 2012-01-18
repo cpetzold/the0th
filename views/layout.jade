@@ -4,25 +4,38 @@ html
     title The0th
     link(rel='stylesheet', href='screen.css')
     script(src= 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js')
+    script(src= 'http://balupton.github.com/jquery-syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js')
     script(src= 'js/jquery.pjax.js')
   body
-  
-    header
-      hgroup
-        h1 The0th
-        h2 a blog about node.js
-        
-    nav
-      ul
-        li: a(href= '/')
-          span.num 0
-          span.text The0th
-          span.cap /
-        li: a(href= '/about')
-          span.num 1
-          span.text About
-          span.cap /about
+    #fb-root
+    script
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=136190406498193";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+      
+    #container
+      
+      nav
+        ul
+          li: a#logo(href= '/')
+            .in
+              span.num 0
+              span.text the0th
+              span.cap /
+          li: a(href= '/about')
+            .in
+              span.num 1
+              span.text about
+              span.cap /about
+          each i in [2,3,4,5,6,7,8,9]
+            li
+              .empty
+                .in: span.num= i
     
-    section#content!= body
+      section#content!= body
     
     script(src= 'js/index.js')
