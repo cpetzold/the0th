@@ -1,14 +1,14 @@
 var fs = require('fs')
   , express = require('express')
-  , reed = require('reed')
-  , highlight = require('highlight').Highlight
+  , blog = require('blog')
   , moment = require('moment')
   , jadevu = require('jadevu')
   , stylus = require('stylus');
 
 console.log = require('logging').from(__filename);
 
-var server = express.createServer();
+var server = express.createServer()
+  , blog = blog.createBlog();
 
 server.configure(function() {
   server.set('views', __dirname + '/views');
@@ -22,18 +22,16 @@ server.configure(function() {
       }
   }));
   server.use(express.static(__dirname + '/public'));
-  server.use(server.router);
   server.use(express.favicon(__dirname + '/public/favicon.png'));
+  server.use(server.router);
+  
+  server.helpers({
+    moment: moment
+  });
 });
 
 server.get('/', function(req, res) {
-  reed.all(function(e, posts) {
-    var posts = posts.map(function(post) {
-      post.metadata.body = highlight(post.htmlContent, false, true);
-      post.metadata.published_formatted = moment(post.metadata.published).format('MMMM Do, YYYY');
-      return post.metadata;
-    });
-    
+  blog.getPosts(function(e, posts) {
     res.render('index', {
         posts: posts
       , layout: !req.header('X-PJAX')
@@ -44,12 +42,11 @@ server.get('/', function(req, res) {
 
 server.get('/:page', function(req, res, next) {
   var slug = req.param('page');
-  reed.pages.get(slug, function(e, page, body) {
-    if (e || !body) {
-      return next();
+  blog.getPage(slug, function(e, page) {
+    if (e || !page) {
+      return res.send(404);
     }
     
-    page.body = highlight(body, false, true);
     res.render('page', {
         page: page
       , layout: !req.header('X-PJAX')
@@ -57,15 +54,12 @@ server.get('/:page', function(req, res, next) {
   });
 });
 
-server.get('/:post', function(req, res, next) {
+server.get('/:date/:post', function(req, res, next) {
   var slug = req.param('post');
-  reed.get(slug, function(e, post, body) {
-    if (e || !body) {
+  blog.getPost(slug, function(e, post) {
+    if (e || !post) {
       return res.send(404);
     }
-    
-    post.body = highlight(body, false, true);
-    post.published_formatted = moment(post.published).format('MMMM Do, YYYY');
 
     res.render('post', {
         post: post
@@ -74,14 +68,5 @@ server.get('/:post', function(req, res, next) {
   });
 });
 
-
-reed.on('ready', function() {
-  server.listen(8080);
-  console.log('Server running on', 8080);
-});
-
-reed.on('pagesReady', function() {
-  reed.open('./posts');
-});
-reed.pages.open('./pages');
-
+server.listen(8080);
+console.log('Server running on', 8080);
