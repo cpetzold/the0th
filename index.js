@@ -8,12 +8,13 @@ var fs = require('fs')
 console.log = require('logging').from(__filename);
 
 var server = express.createServer()
-  , blog = blog.createBlog();
+  , blog = blog.createBlog({ post: './posts', pages: './pages' });
 
 server.configure(function() {
   server.set('views', __dirname + '/views');
   server.set('view engine', 'jade');
   server.use(express.methodOverride());
+  server.use(express.bodyParser());
   server.use(stylus.middleware({
       src: __dirname + '/styles'
     , dest: __dirname + '/public'
@@ -37,7 +38,6 @@ server.get('/', function(req, res) {
       , layout: !req.header('X-PJAX')
     });
   });
-  
 });
 
 server.get('/:page', function(req, res, next) {
@@ -60,11 +60,25 @@ server.get('/:date/:post', function(req, res, next) {
     if (e || !post) {
       return res.send(404);
     }
-
+    
     res.render('post', {
         post: post
+      , comments: true
       , layout: !req.header('X-PJAX')
     });
+  });
+});
+
+server.post('/:post/comment', function(req, res, next) {
+  var slug = req.param('post')
+    , comment = {
+        name: req.param('name')
+      , email: req.param('email')
+      , body: req.param('body')
+    };
+  
+  blog.addComment(slug, comment, function(e, post) {
+     res.redirect(req.header('referer') + '#comments');
   });
 });
 

@@ -3,6 +3,9 @@
   "description": "hacks.",
   "version": "0.0.2",
   "author": "Conner Petzold",
+  "repository": {
+    "url": "https://github.com/cpetzold/the0th"
+  },
   "dependencies": {
     "express": "2.x",
     "moment": "1.3.x",

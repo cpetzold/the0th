@@ -1,5 +1,24 @@
-article
+- post.path = '/' + moment(post.date).format('M-D-YYYY') + '/' + post.slug;
+
+article.post
   header
-    a(href= '/' + moment(post.date).format('M-D-YYYY') + '/' + post.slug): h1= post.title
+    a(href= post.path): h1= post.title
     time(datetime= post.date)= moment(post.date).format('MMMM Do, YYYY')
-  section!= post.html
+    a.numComments(href= post.path + '#comments')
+      strong= post.comments.length
+      |  Comments
+  section.body!= post.html
+  - if (typeof comments != 'undefined' && comments)
+    a(name= 'comments')
+    section.comments
+      h2 Comments (#{post.comments.length})
+      each comment in post.comments
+        include comment
+      form(action= '/' + post.slug + '/comment', method= 'post')
+        h3 Add a comment
+        fieldset
+          input#name(type= 'text', name= 'name', placeholder= 'Name')
+          input#email(type= 'text', name= 'email', placeholder= 'Email')
+          textarea#body(name= 'body', placeholder= 'Comment')
+          input#comment(type= 'submit', name='comment', value= 'Submit')
+          

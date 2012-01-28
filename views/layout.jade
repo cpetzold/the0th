@@ -6,7 +6,7 @@ html
     script(src= 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js')
     script(src= '/js/jquery.pjax.js')
   body
-    #container
+    .container
       nav
         ul
           li: a#logo(href= '/')
@@ -25,5 +25,11 @@ html
                 .in: span.num= i
     
       section#content!= body
+    footer
+      .container
+        .copyright &copy; #{(new Date).getFullYear()} 
+          a(href= 'mailto:cpetzold@gmail.com') Conner Petzold
+        .clear
+        
     
     script(src= '/js/index.js')
