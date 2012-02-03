@@ -11,9 +11,8 @@ clight = #e3e3e3
 cmed = #a3b6c0
 cdark = #70777f
 
-@media screen and (max-width: 1440px)
-  .container
-    cols: 10
+.container
+  cols: 10
     
 @media screen and (max-width: 800px)
   .container
@@ -72,10 +71,12 @@ a
   
 h1, h2, h3, h4
   font-weight: normal
-  margin: 1em 0 0.3em
+  padding: 1em 0 0.3em
   color: #000
   
 .comments
+  code
+    padding: 0.8em 1.4em
   form
     margin-top: 2em
   input[type='text'],
@@ -118,17 +119,17 @@ h1, h2, h3, h4
     
 .post
   > header
-    margin: 1em 0 0.8em
+    margin: 1em 0 1.5em
     h1
       font-size: 2em
-      margin: 0
+      padding: 0
       color: cprimary
     time,
     .numComments
       display: inline-block
       font-size: 0.7em
       padding: 0.4em 0.6em
-      margin: 0.3em 0.3em 0 0
+      margin: 0.6em 0.3em 0 0
       color: cbg
     time
       background: darken(csecondary, 5%)
@@ -199,9 +200,10 @@ nav ul
           content: ' ¬'
     
     span
-      display block    
+      display block
     
-pre code
+pre code,
+.CodeMirror
   display: block
   padding: 1.3em 1.5em
   margin: 1em 0
@@ -212,7 +214,29 @@ pre code
   color: #bbb
   border-bottom: 0.5em solid #222
 
-  .keyword, .literal, .change, .winutils, .flow, .lisp .title, .tex .special
+  // .cm-s-default span.cm-keyword {color: #708;}
+  // .cm-s-default span.cm-atom {color: #219;}
+  // .cm-s-default span.cm-number {color: #164;}
+  // .cm-s-default span.cm-def {color: #00f;}
+  // .cm-s-default span.cm-variable {color: black;}
+  // .cm-s-default span.cm-variable-2 {color: #05a;}
+  // .cm-s-default span.cm-variable-3 {color: #085;}
+  // .cm-s-default span.cm-property {color: black;}
+  // .cm-s-default span.cm-operator {color: black;}
+  // .cm-s-default span.cm-meta {color: #555;}
+  // .cm-s-default span.cm-error {color: #f00;}
+  // .cm-s-default span.cm-qualifier {color: #555;}
+  // .cm-s-default span.cm-builtin {color: #30a;}
+  // .cm-s-default span.cm-bracket {color: #cc7;}
+  // .cm-s-default span.cm-tag {color: #170;}
+  // .cm-s-default span.cm-attribute {color: #00c;}
+  // .cm-s-default span.cm-header {color: #a0a;}
+  // .cm-s-default span.cm-quote {color: #090;}
+  // .cm-s-default span.cm-hr {color: #999;}
+  // .cm-s-default span.cm-link {color: #00c;}
+
+  .keyword, .literal, .change, .winutils, .flow, .lisp .title, .tex .special,
+  .cm-keyword
     color: white
 
   .string, .function .title, .class .title,
@@ -225,12 +249,14 @@ pre code
   .django .template_tag, .django .variable,
   .attr_selector, .pseudo, .addition, .stream, .envvar,
   .apache .tag, .apache .cbracket,
-  .tex .command, .input_number
+  .tex .command, .input_number,
+  .cm-string, .cm-string-2
     color: csecondary
 
   .comment, .java .annotation, .python .decorator,
   .template_comment, .pi, .doctype, .deletion,
-  .shebang, .apache .sqbracket, .tex .formula
+  .shebang, .apache .sqbracket, .tex .formula,
+  .cm-comment
     color: #777
 
 

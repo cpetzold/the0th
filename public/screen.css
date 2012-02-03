@@ -152,10 +152,8 @@ select textarea {
     font-size: 18/16em;
   }
 }
-@media screen and (max-width: 1440px) {
-  .container {
-    width: 43.5em;
-  }
+.container {
+  width: 43.5em;
 }
 @media screen and (max-width: 800px) {
   .container {
@@ -221,8 +219,11 @@ h2,
 h3,
 h4 {
   font-weight: normal;
-  margin: 1em 0 0.3em;
+  padding: 1em 0 0.3em;
   color: #000;
+}
+.comments code {
+  padding: 0.8em 1.4em;
 }
 .comments form {
   margin-top: 2em;
@@ -275,11 +276,11 @@ h4 {
   color: #bbb;
 }
 .post > header {
-  margin: 1em 0 0.8em;
+  margin: 1em 0 1.5em;
 }
 .post > header h1 {
   font-size: 2em;
-  margin: 0;
+  padding: 0;
   color: #343646;
 }
 .post > header time,
@@ -287,7 +288,7 @@ h4 {
   display: inline-block;
   font-size: 0.7em;
   padding: 0.4em 0.6em;
-  margin: 0.3em 0.3em 0 0;
+  margin: 0.6em 0.3em 0 0;
   color: #fff;
 }
 .post > header time {
@@ -380,7 +381,8 @@ nav ul li .empty:hover .num::after {
 nav ul li span {
   display: block;
 }
-pre code {
+pre code,
+.CodeMirror {
   display: block;
   padding: 1.3em 1.5em;
   margin: 1em 0;
@@ -392,81 +394,156 @@ pre code {
   border-bottom: 0.5em solid #222;
 }
 pre code .keyword,
+.CodeMirror .keyword,
 pre code .literal,
+.CodeMirror .literal,
 pre code .change,
+.CodeMirror .change,
 pre code .winutils,
+.CodeMirror .winutils,
 pre code .flow,
+.CodeMirror .flow,
 pre code .lisp .title,
-pre code .tex .special {
+.CodeMirror .lisp .title,
+pre code .tex .special,
+.CodeMirror .tex .special,
+pre code .cm-keyword,
+.CodeMirror .cm-keyword {
   color: #fff;
 }
 pre code .string,
+.CodeMirror .string,
 pre code .function .title,
+.CodeMirror .function .title,
 pre code .class .title,
+.CodeMirror .class .title,
 pre code .haskell .label,
+.CodeMirror .haskell .label,
 pre code .ini .title,
+.CodeMirror .ini .title,
 pre code .tag .value,
+.CodeMirror .tag .value,
 pre code .css .rules .value,
+.CodeMirror .css .rules .value,
 pre code .processor,
+.CodeMirror .processor,
 pre code .ruby .symbol,
+.CodeMirror .ruby .symbol,
 pre code .ruby .symbol .string,
+.CodeMirror .ruby .symbol .string,
 pre code .ruby .symbol .keyword,
+.CodeMirror .ruby .symbol .keyword,
 pre code .ruby .symbol .keymethods,
+.CodeMirror .ruby .symbol .keymethods,
 pre code .ruby .instancevar,
+.CodeMirror .ruby .instancevar,
 pre code .ruby .class .parent,
+.CodeMirror .ruby .class .parent,
 pre code .built_in,
+.CodeMirror .built_in,
 pre code .sql .aggregate,
+.CodeMirror .sql .aggregate,
 pre code .django .template_tag,
+.CodeMirror .django .template_tag,
 pre code .django .variable,
+.CodeMirror .django .variable,
 pre code .attr_selector,
+.CodeMirror .attr_selector,
 pre code .pseudo,
+.CodeMirror .pseudo,
 pre code .addition,
+.CodeMirror .addition,
 pre code .stream,
+.CodeMirror .stream,
 pre code .envvar,
+.CodeMirror .envvar,
 pre code .apache .tag,
+.CodeMirror .apache .tag,
 pre code .apache .cbracket,
+.CodeMirror .apache .cbracket,
 pre code .tex .command,
-pre code .input_number {
+.CodeMirror .tex .command,
+pre code .input_number,
+.CodeMirror .input_number,
+pre code .cm-string,
+.CodeMirror .cm-string,
+pre code .cm-string-2,
+.CodeMirror .cm-string-2 {
   color: #acc1e8;
 }
 pre code .comment,
+.CodeMirror .comment,
 pre code .java .annotation,
+.CodeMirror .java .annotation,
 pre code .python .decorator,
+.CodeMirror .python .decorator,
 pre code .template_comment,
+.CodeMirror .template_comment,
 pre code .pi,
+.CodeMirror .pi,
 pre code .doctype,
+.CodeMirror .doctype,
 pre code .deletion,
+.CodeMirror .deletion,
 pre code .shebang,
+.CodeMirror .shebang,
 pre code .apache .sqbracket,
-pre code .tex .formula {
+.CodeMirror .apache .sqbracket,
+pre code .tex .formula,
+.CodeMirror .tex .formula,
+pre code .cm-comment,
+.CodeMirror .cm-comment {
   color: #777;
 }
 pre code .keyword,
+.CodeMirror .keyword,
 pre code .css .id,
+.CodeMirror .css .id,
 pre code .phpdoc,
+.CodeMirror .phpdoc,
 pre code .function .title,
+.CodeMirror .function .title,
 pre code .class .title,
+.CodeMirror .class .title,
 pre code .haskell .label,
+.CodeMirror .haskell .label,
 pre code .vbscript .built_in,
+.CodeMirror .vbscript .built_in,
 pre code .sql .aggregate,
+.CodeMirror .sql .aggregate,
 pre code .rsl .built_in,
+.CodeMirror .rsl .built_in,
 pre code .smalltalk .class,
+.CodeMirror .smalltalk .class,
 pre code .xml .tag .title,
+.CodeMirror .xml .tag .title,
 pre code .diff .header,
+.CodeMirror .diff .header,
 pre code .chunk,
+.CodeMirror .chunk,
 pre code .winutils,
+.CodeMirror .winutils,
 pre code .bash .variable,
+.CodeMirror .bash .variable,
 pre code .lisp .title,
+.CodeMirror .lisp .title,
 pre code .apache .tag,
-pre code .tex .special {
+.CodeMirror .apache .tag,
+pre code .tex .special,
+.CodeMirror .tex .special {
   color: #fff;
 }
-pre code .literal {
+pre code .literal,
+.CodeMirror .literal {
   color: #ff5a5a;
 }
 pre code .xml .css,
+.CodeMirror .xml .css,
 pre code .xml .javascript,
+.CodeMirror .xml .javascript,
 pre code .xml .vbscript,
-pre code .tex .formula {
+.CodeMirror .xml .vbscript,
+pre code .tex .formula,
+.CodeMirror .tex .formula {
   opacity: 0.5;
 }

@@ -4,5 +4,5 @@ article.comment
     header
       strong.name= comment.name
       time(datetime= comment.date)= moment(comment.date).format('MMMM Do, YYYY')
-    section= comment.body
+    section!= comment.html
   .clear

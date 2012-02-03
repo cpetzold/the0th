@@ -3,8 +3,14 @@ html
   head
     title The0th
     link(rel= 'stylesheet', href= '/screen.css')
+    link(rel= 'stylesheet', href= '/codemirror.css')
     script(src= 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js')
     script(src= '/js/jquery.pjax.js')
+    script(src= '/js/codemirror.js')
+    script(src= '/js/modes/xml.js')
+    script(src= '/js/modes/javascript.js')
+    script(src= '/js/modes/markdown.js')
+    script(src= '/js/modes/gfm.js')
   body
     .container
       nav
@@ -14,11 +20,11 @@ html
               span.num 0
               span.text the0th
               span.cap /
-          li: a(href= '/about')
-            .in
-              span.num 1
-              span.text about
-              span.cap /about
+          //- li: a(href= '/about')
+          //- .in
+          //-             span.num 1
+          //-             span.text about
+          //-             span.cap /about
           each i in [2,3,4,5,6,7,8,9]
             li
               .empty

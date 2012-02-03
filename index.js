@@ -1,6 +1,6 @@
 var fs = require('fs')
   , express = require('express')
-  , blog = require('blog')
+  , owl = require('owl')
   , moment = require('moment')
   , jadevu = require('jadevu')
   , stylus = require('stylus');
@@ -8,7 +8,7 @@ var fs = require('fs')
 console.log = require('logging').from(__filename);
 
 var server = express.createServer()
-  , blog = blog.createBlog({ post: './posts', pages: './pages' });
+  , blog = owl.createBlog();
 
 server.configure(function() {
   server.set('views', __dirname + '/views');
@@ -32,7 +32,7 @@ server.configure(function() {
 });
 
 server.get('/', function(req, res) {
-  blog.getPosts(function(e, posts) {
+  blog.posts(function(e, posts) {
     res.render('index', {
         posts: posts
       , layout: !req.header('X-PJAX')
@@ -41,8 +41,7 @@ server.get('/', function(req, res) {
 });
 
 server.get('/:page', function(req, res, next) {
-  var slug = req.param('page');
-  blog.getPage(slug, function(e, page) {
+  blog.page(req.param('page'), function(e, page) {
     if (e || !page) {
       return res.send(404);
     }
@@ -55,8 +54,7 @@ server.get('/:page', function(req, res, next) {
 });
 
 server.get('/:date/:post', function(req, res, next) {
-  var slug = req.param('post');
-  blog.getPost(slug, function(e, post) {
+  blog.post(req.param('post'), function(e, post) {
     if (e || !post) {
       return res.send(404);
     }
@@ -70,14 +68,11 @@ server.get('/:date/:post', function(req, res, next) {
 });
 
 server.post('/:post/comment', function(req, res, next) {
-  var slug = req.param('post')
-    , comment = {
-        name: req.param('name')
-      , email: req.param('email')
-      , body: req.param('body')
-    };
-  
-  blog.addComment(slug, comment, function(e, post) {
+  blog.comment(req.param('post'), {
+      name: req.param('name')
+    , email: req.param('email')
+    , md: req.param('body')
+  }, function(e, post) {
      res.redirect(req.header('referer') + '#comments');
   });
 });

@@ -1,14 +1,17 @@
 - post.path = '/' + moment(post.date).format('M-D-YYYY') + '/' + post.slug;
+- var comments = typeof comments != 'undefined' && comments;
 
 article.post
+  - if (comments)
+    title= post.title
   header
     a(href= post.path): h1= post.title
     time(datetime= post.date)= moment(post.date).format('MMMM Do, YYYY')
     a.numComments(href= post.path + '#comments')
       strong= post.comments.length
-      |  Comments
+      |  Comment#{(post.comments.length == 1) ? '' : 's'}
   section.body!= post.html
-  - if (typeof comments != 'undefined' && comments)
+  - if (comments)
     a(name= 'comments')
     section.comments
       h2 Comments (#{post.comments.length})
@@ -17,8 +20,15 @@ article.post
       form(action= '/' + post.slug + '/comment', method= 'post')
         h3 Add a comment
         fieldset
-          input#name(type= 'text', name= 'name', placeholder= 'Name')
-          input#email(type= 'text', name= 'email', placeholder= 'Email')
-          textarea#body(name= 'body', placeholder= 'Comment')
+          textarea#body(name= 'body', placeholder= 'Comment').
+            name: 
+            email: 
           input#comment(type= 'submit', name='comment', value= 'Submit')
           
+script
+  var el = $('#body')[0]
+    , editor = CodeMirror.fromTextArea(el, {
+          mode: 'gfm'
+        , matchBrackets: true
+        , value: el.value
+    });
