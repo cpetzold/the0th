@@ -11,6 +11,7 @@ var server = express.createServer()
   , blog = owl.createBlog();
 
 server.configure(function() {
+  server.set('port', 8080);
   server.set('views', __dirname + '/views');
   server.set('view engine', 'jade');
   server.use(express.methodOverride());
@@ -29,6 +30,10 @@ server.configure(function() {
   server.helpers({
     moment: moment
   });
+});
+
+server.configure('prod', function() {
+  server.set('port', 80);
 });
 
 server.get('/', function(req, res) {
@@ -77,5 +82,9 @@ server.post('/:post/comment', function(req, res, next) {
   });
 });
 
-server.listen(8080);
-console.log('Server running on', 8080);
+blog.init(function() {
+  server.listen(server.set('port'), function() {
+    console.log('Server running on', server.set('port'));
+  });
+});
+
