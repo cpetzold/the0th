@@ -23,12 +23,14 @@ article.post
           textarea#body(name= 'body', placeholder= 'Comment').
             name: 
             email: 
+             
           input#comment(type= 'submit', name='comment', value= 'Submit')
-          
-script
-  var el = $('#body')[0]
-    , editor = CodeMirror.fromTextArea(el, {
-          mode: 'gfm'
-        , matchBrackets: true
-        , value: el.value
-    });
+   
+- if (comments)       
+  script
+    var el = $('#body')[0]
+      , editor = CodeMirror.fromTextArea(el, {
+            mode: 'gfm'
+          , matchBrackets: true
+          , value: el.value
+      });
