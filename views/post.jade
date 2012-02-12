@@ -1,9 +1,10 @@
 - post.path = '/' + moment(post.date).format('M-D-YYYY') + '/' + post.slug;
 - var comments = typeof comments != 'undefined' && comments;
+- title = typeof title != 'undefined' ? title : null;
 
 article.post
   - if (comments)
-    title= post.title
+    title= post.title + ' - The0th'
   header
     a(href= post.path): h1= post.title
     time(datetime= post.date)= moment(post.date).format('MMMM Do, YYYY')
@@ -11,7 +12,7 @@ article.post
       strong= post.comments.length
       |  Comment#{(post.comments.length == 1) ? '' : 's'}
     each tag in post.tags
-      a.tag(href= '/tag/' + tag)= tag
+      a.tag(href= '/tag/' + tag, class= ((tag == title) ? 'active' : ''))= tag
   section.body!= post.html
   - if (comments)
     a(name= 'comments')

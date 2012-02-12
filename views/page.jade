@@ -1,4 +1,5 @@
-article
+article.page
+  title= page.title + ' - The0th'
   header
-    h1= page.title
+    a(href= '/' + page.slug): h1= page.title
   section!= page.html

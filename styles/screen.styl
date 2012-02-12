@@ -9,6 +9,10 @@ clight = #e3e3e3
 cmed = #a3b6c0
 cdark = #70777f
 
+cred = #F66
+cgreen = #9dcd69
+cblue = #9CB5E4
+
 .clear
   clear: both
 
@@ -113,7 +117,8 @@ h1, h2, h3, h4
     time
       color: #bbb
     
-.post
+.post,
+.page
   > header
     margin: 1em 0 1em
     h1
@@ -128,16 +133,17 @@ h1, h2, h3, h4
       display: inline-block
       font-size: 0.7em
       padding: 0.4em 0.6em
-      margin: 0.6em 0.3em 0 0
+      margin: 1em 0.3em 0 0
       color: cbg
     time
-      background: darken(csecondary, 5%)
-      border-bottom: 0.1em solid darken(csecondary, 50%)
+      background: cblue
+      border-bottom: 0.1em solid darken(cblue, 20%)
     .numComments
-      background: lighten(red, 40%)
-      border-bottom: 0.1em solid darken(red, 40%)
+      background: cred
+      border-bottom: 0.1em solid darken(cred, 30%)
       &:hover
-        background: lighten(red, 20%)
+        background: darken(cred, 10%)
+        border-color: darken(cred, 40%)
     .tag
       background: #eee
       color: #aaa
@@ -145,6 +151,11 @@ h1, h2, h3, h4
       &:hover
         background: #ddd
         color: #888
+      &.active
+        background: cgreen
+        color: #fff
+        border-bottom: 0.1em solid darken(cgreen, 30%)
+      
   p
     line-height: 1.8em
     text-align: justify

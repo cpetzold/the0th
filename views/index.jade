@@ -1,6 +1,4 @@
 - var title = typeof title != 'undefined' ? title : null;
-title= title || 'The0th'
-- if (title)
-  h1= title
+title= (title ? title + ' - ' : '') + 'The0th'
 each post in posts
   include post

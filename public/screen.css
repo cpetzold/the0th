@@ -119,57 +119,79 @@ h4 {
 .comments > .comment time {
   color: #bbb;
 }
-.post > header {
+.post > header,
+.page > header {
   margin: 1em 0 1em;
 }
-.post > header h1 {
+.post > header h1,
+.page > header h1 {
   font-size: 2em;
   padding: 0;
   color: #343646;
 }
-.post > header h1:hover {
+.post > header h1:hover,
+.page > header h1:hover {
   color: #000;
 }
 .post > header time,
+.page > header time,
 .post > header .numComments,
-.post > header .tag {
+.page > header .numComments,
+.post > header .tag,
+.page > header .tag {
   display: inline-block;
   font-size: 0.7em;
   padding: 0.4em 0.6em;
-  margin: 0.6em 0.3em 0 0;
+  margin: 1em 0.3em 0 0;
   color: #fff;
 }
-.post > header time {
+.post > header time,
+.page > header time {
   background: #9cb5e4;
-  border-bottom: 0.1em solid #2c549e;
+  border-bottom: 0.1em solid #6088d4;
 }
-.post > header .numComments {
+.post > header .numComments,
+.page > header .numComments {
   background: #f66;
-  border-bottom: 0.1em solid #900;
+  border-bottom: 0.1em solid #fa0000;
 }
-.post > header .numComments:hover {
-  background: #f33;
+.post > header .numComments:hover,
+.page > header .numComments:hover {
+  background: #ff4242;
+  border-color: #d60000;
 }
-.post > header .tag {
+.post > header .tag,
+.page > header .tag {
   background: #eee;
   color: #aaa;
   border-bottom: 0.1em solid #aaa;
 }
-.post > header .tag:hover {
+.post > header .tag:hover,
+.page > header .tag:hover {
   background: #ddd;
   color: #888;
 }
-.post p {
+.post > header .tag.active,
+.page > header .tag.active {
+  background: #9dcd69;
+  color: #fff;
+  border-bottom: 0.1em solid #6fa336;
+}
+.post p,
+.page p {
   line-height: 1.8em;
   text-align: justify;
 }
-.post h1 {
+.post h1,
+.page h1 {
   font-size: 1.4em;
 }
-.post h2 {
+.post h2,
+.page h2 {
   font-size: 1.2em;
 }
-.post h3 {
+.post h3,
+.page h3 {
   font-size: 1em;
   font-weight: bold;
 }
