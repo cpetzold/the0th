@@ -1,0 +1,103 @@
+{
+    "name": "Conner Petzold"
+  , "contact": {
+        "phone": 9704020413
+      , "email": "cpetzold@gmail.com"
+    }
+  , "experience": [
+      {
+          "title": "Engineer"
+        , "company": "Storify"
+        , "to": "current"
+        , "from": 2011
+        , "location": "San Francisco, CA"
+        , "tags": [
+              "js"
+            , "nodejs"
+            , "mongodb"
+            , "git"
+          ]
+        , "points": [
+          ]
+      }
+    , {
+          "title": "Front-end Engineer"
+        , "company": "Yahoo!"
+        , "to": 2011
+        , "from": 2010
+        , "location": "Santa Clara, CA"
+        , "tags": [
+              "js"
+            , "nodejs"
+            , "yui"
+            , "yql"
+            , "html"
+            , "php"
+            , "mvc"
+            , "java"
+            , "struts"
+            , "sql"
+            , "mdx"
+            , "git"
+            , "svn"
+            , "scrum"
+            , "photoshop"
+          ]
+        , "points": [
+              "Prototyped and started planning on an architecture for next generation analytics applications using NodeJS and YUI3"
+            , "Worked with the rest of the front-end team to analyze modern web frameworks and give valueable feedback to management"
+            , "Supported and added features to legacy analytics applications in both php and java environments"
+          ]
+      }
+    , {
+          "title": "Front-end Intern"
+        , "company": "Yahoo!"
+        , "to": 2009
+        , "from": 2008
+        , "location": "Sunnyvale, CA"
+        , "tags": [
+              "php"
+            , "mvc"
+            , "js"
+            , "yui"
+            , "svn"
+            , "mysql"
+            , "scrum"
+            , "photoshop"
+          ]
+        , "points": [
+              "Developed many features of a major analytics project involving complex data management and visualizations"
+            , "Took part in daily team meetings and worked closely with other team members to accomplish common goals"
+            , "Developed a ﬁrm understanding of agile development (Scrum) and working with others’ code"
+            , "Learned the best practices for front end web development involving JavaScript syntax and other language based problems"
+          ]
+      }
+    , {
+          "title": "IT Intern"
+        , "company": "Enbridge Inc."
+        , "to": 2008
+        , "from": 2007
+        , "location": "Houston, TX"
+        , "tags": [
+              "support"
+            , "windows"
+            , "os x"
+            , "voip"
+            , "photoshop"
+            , "html"
+          ]
+        , "points": [
+              "Involved in many different ﬁelds ranging from telecommunications to desktop support"
+            , "Learned correct business etiquette working with a wide range of people in a professional environment"
+            , "Took part in handling desktop support for 500+ internal employees"
+          ]
+      }
+    ]
+  , "education": {
+        "name": "Colorado State University"
+      , "degree": "Bachelor of Computer Science"
+      , "from": 2006
+      , "to": 2010
+      , "location": "Fort Collins, CO"
+    }
+}

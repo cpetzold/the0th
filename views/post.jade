@@ -10,12 +10,15 @@ article.post
     a.numComments(href= post.path + '#comments')
       strong= post.comments.length
       |  Comment#{(post.comments.length == 1) ? '' : 's'}
+    each tag in post.tags
+      a.tag(href= '/tag/' + tag)= tag
   section.body!= post.html
   - if (comments)
     a(name= 'comments')
     section.comments
       h2 Comments (#{post.comments.length})
-      each comment in post.comments
+      each comment, n in post.comments
+        - comment.n = n + 1;
         include comment
       form(action= '/' + post.slug + '/comment', method= 'post')
         h3 Add a comment

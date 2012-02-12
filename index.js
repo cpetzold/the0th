@@ -8,7 +8,8 @@ var fs = require('fs')
 console.log = require('logging').from(__filename);
 
 var server = express.createServer()
-  , blog = owl.createBlog();
+  , blog = owl.createBlog()
+  , resume = JSON.parse(fs.readFileSync('resume.json', 'utf8'));
 
 server.configure(function() {
   server.set('port', 8080);
@@ -40,6 +41,24 @@ server.get('/', function(req, res) {
   blog.posts(function(e, posts) {
     res.render('index', {
         posts: posts
+      , layout: !req.header('X-PJAX')
+    });
+  });
+});
+
+server.get('/:resume', function(req, res, next) {
+  if (req.params.resume != 'résumé' && req.params.resume != 'resume') {
+    return next();
+  }
+
+  res.send(resume);
+});
+
+server.get('/tag/:tag', function(req, res, next) {
+  blog.posts({ tag: req.param('tag') }, function(e, posts) {
+    res.render('index', {
+        title: req.param('tag')
+      , posts: posts
       , layout: !req.header('X-PJAX')
     });
   });
@@ -77,8 +96,8 @@ server.post('/:post/comment', function(req, res, next) {
       name: req.param('name')
     , email: req.param('email')
     , md: req.param('body')
-  }, function(e, post) {
-     res.redirect(req.header('referer') + '#comments');
+  }, function(e, comment, post) {
+     res.redirect(req.header('referer') + '#comment-' + post.comments.length);
   });
 });
 

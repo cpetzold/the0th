@@ -20,15 +20,16 @@ html
               span.num 0
               span.text the0th
               span.cap /
-          //- li: a(href= '/about')
-          //- .in
-          //-             span.num 1
-          //-             span.text about
-          //-             span.cap /about
-          each i in [2,3,4,5,6,7,8,9]
+          li: a(href= '/about')
+            .in
+              span.num 1
+              span.text about
+              span.cap /about
+          each i in [2,3,4]
             li
               .empty
                 .in: span.num= i
+        .clear
     
       section#content!= body
     footer
