@@ -17,10 +17,11 @@ article.post
   - if (comments)
     a(name= 'comments')
     section.comments
-      h2 Comments (#{post.comments.length})
-      each comment, n in post.comments
-        - comment.n = n + 1;
-        include comment
+      - if (post.comments.length)
+        h2 Comments (#{post.comments.length})
+        each comment, n in post.comments
+          - comment.n = n + 1;
+          include comment
       form(action= '/' + post.slug + '/comment', method= 'post')
         h3 Add a comment
         fieldset
