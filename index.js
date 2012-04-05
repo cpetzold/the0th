@@ -13,7 +13,7 @@ var server = module.exports = express.createServer()
   , resume = JSON.parse(fs.readFileSync('resume.json', 'utf8'));
 
 server.configure(function() {
-  server.set('port', 8080);
+  server.set('port', 3000);
   server.set('views', __dirname + '/views');
   server.set('view engine', 'jade');
   server.use(express.methodOverride());
@@ -32,6 +32,10 @@ server.configure(function() {
   server.helpers({
     moment: moment
   });
+});
+
+server.configure('production', function() {
+  server.set('port', 80);
 });
 
 server.get('/', function(req, res) {
@@ -98,4 +102,6 @@ server.post('/:post/comment', function(req, res, next) {
   });
 });
 
-blog.init();
+blog.init(function() {
+  server.listen(server.set('port'));
+});
