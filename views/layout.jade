@@ -12,32 +12,8 @@ html
     script(src= '/js/modes/markdown.js')
     script(src= '/js/modes/gfm.js')
   body
-    #top
-      .container
-        nav
-          ul
-            li: a#logo(href= '/')
-              .in
-                span.num 0
-                span.text the0th
-                span.cap /
-            li: a(href= '/about')
-              .in
-                span.num 1
-                span.text about
-                span.cap /about
-            each i in [2,3,4]
-              li
-                .empty
-                  .in: span.num= i
-          .clear
-    
+    #scroll
+      #container
         section#content!= body
-    footer
-      .container
-        .copyright &copy; #{(new Date).getFullYear()} 
-          a(href= 'mailto:cpetzold@gmail.com') Conner Petzold
-        .clear
-        
     
     script(src= '/js/index.js')

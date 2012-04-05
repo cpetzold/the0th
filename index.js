@@ -3,11 +3,12 @@ var fs = require('fs')
   , owl = require('owl')
   , moment = require('moment')
   , jadevu = require('jadevu')
-  , stylus = require('stylus');
+  , stylus = require('stylus')
+  , nib = require('nib');
 
 console.log = require('logging').from(__filename);
 
-var server = express.createServer()
+var server = module.exports = express.createServer()
   , blog = owl.createBlog()
   , resume = JSON.parse(fs.readFileSync('resume.json', 'utf8'));
 
@@ -21,7 +22,7 @@ server.configure(function() {
       src: __dirname + '/styles'
     , dest: __dirname + '/public'
     , compile: function(str, path) {
-        return stylus(str).set('filename', path);
+        return stylus(str).set('filename', path).use(nib());
       }
   }));
   server.use(express.static(__dirname + '/public'));
@@ -31,10 +32,6 @@ server.configure(function() {
   server.helpers({
     moment: moment
   });
-});
-
-server.configure('prod', function() {
-  server.set('port', 80);
 });
 
 server.get('/', function(req, res) {
@@ -101,9 +98,4 @@ server.post('/:post/comment', function(req, res, next) {
   });
 });
 
-blog.init(function() {
-  server.listen(server.set('port'), function() {
-    console.log('Server running on', server.set('port'));
-  });
-});
-
+blog.init();

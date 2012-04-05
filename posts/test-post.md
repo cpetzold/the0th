@@ -1,4 +1,4 @@
-title: Testing My Blog, yo!
+title: Testing My Blog!!
 date: 1-16-2012
 tags: blog, markdown, node.js,    mongodb  , woot
 

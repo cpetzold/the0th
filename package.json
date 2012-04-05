@@ -3,14 +3,14 @@
   "description": "hacks.",
   "version": "0.0.2",
   "author": "Conner Petzold",
-  "repository": {
-    "url": "https://github.com/cpetzold/the0th"
-  },
+  "repository": { "url": "https://github.com/cpetzold/the0th" },
   "dependencies": {
     "owl": "*",
     "express": "2.x",
+    "express-useragent": "0.x",
     "moment": "1.3.x",
     "stylus": "0.17.x",
+    "nib": "0.4.x",
     "jade": "0.x",
     "jadevu": "0.x",
     "logging": "2.0.11"
