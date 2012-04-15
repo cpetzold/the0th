@@ -3,13 +3,14 @@ $(function() {
   $('a').pjax('#content');
 
   var el = $('#content')
+    , scroll = $('#scroll')
     , amount = 120
     , i = 0
     , posts = $('.post')
     , moving = false;
 
   $(posts[0]).addClass('active');
-  
+
   $(window).keydown(function(e) {
     switch (e.keyCode) {
       case 37: 
@@ -26,6 +27,8 @@ $(function() {
     $(posts[i]).addClass('active');
     moving = true;
     el.css('left', -i * amount + '%');
+    scroll.scrollTop(0);
+    // scroll.animate({ scrollTop: 0 }, 500);
     setTimeout(function() {
       moving = false;
     }, 501);
