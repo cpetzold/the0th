@@ -40,6 +40,10 @@ server.configure('production', function() {
 
 server.get('/', function(req, res) {
   blog.posts(function(e, posts) {
+    posts.forEach(function(post) {
+      post.path = '/' + moment(post.date).format('M-D-YYYY') + '/' + post.slug;
+    });
+
     res.render('index', {
         posts: posts
       , layout: !req.header('X-PJAX')
@@ -83,6 +87,8 @@ server.get('/:date/:post', function(req, res, next) {
     if (e || !post) {
       return res.send(404);
     }
+
+    post.path = '/' + moment(post.date).format('M-D-YYYY') + '/' + post.slug;
     
     res.render('post', {
         post: post
@@ -104,4 +110,5 @@ server.post('/:post/comment', function(req, res, next) {
 
 blog.init(function() {
   server.listen(server.set('port'));
+  console.log('listening on port', server.set('port'));
 });

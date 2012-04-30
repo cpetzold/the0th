@@ -21,39 +21,46 @@ cblue = #9CB5E4
 html,
 body
   width: 100%
-  height: 100%
 
 body
-  overflow: hidden
   margin: 0
   font-family: fstack
-  font-size: 13px
+  font-size: 14px
   color: ctext
   background: #fff
   -webkit-tap-highlight-color: rgba(csecondary, 0.62)
-  
-#scroll
-  width: 100%
-  height: 100%
-  overflow-x: hidden
-  overflow-y: auto
 
-#container
-  padding: 1.5em 3em
-  min-width: 30em
+.container
+  padding: 0em 1em
   max-width: 55em
   margin: auto
   position: relative
 
-footer
-  color: #eee
-  border-top: 0.5em solid #eee
-  .copyright
-    float: right
-    font-size: 0.8em
-  a
-    color: #ACC1E8
-  
+#head
+  position: fixed
+  top: 0
+  width: 100%
+  height: 3em
+  z-index: 1000
+  background: #fff
+
+#shadow
+  position: fixed
+  top: 3em
+  left: 0
+  width: 100%
+  height: 1em
+  -webkit-mask-box-image: -webkit-linear-gradient(left,transparent 0%,rgba(0,0,0,1) 50%,transparent 100%)
+  background-image: -webkit-linear-gradient(top,rgba(0, 0, 0, .2),transparent)
+  transition: opacity 1s
+  opacity: 0
+  z-index: 999
+  &.active
+    opacity: 1
+
+#content
+  padding: 3em 0 0
+
 fieldset
   margin: 0
   padding: 0
@@ -80,6 +87,7 @@ p
 a
   text-decoration: none
   color: ctext
+  transition: background 0.3s, color 0.3s
   
 h1, h2, h3, h4
   font-weight: normal
@@ -97,7 +105,6 @@ h1, h2, h3, h4
     font-size: 0.95em
     line-height: 1.5em
     padding: 1.5em 0 0 4em
-    text-align: justify
     .avatar
       position: absolute
       left: 0
@@ -109,21 +116,9 @@ h1, h2, h3, h4
       margin-bottom: 0.5em
     time
       color: #bbb
-    
-#content
-  position: relative
-  left: 0%
-  transition: left 0.5s
 
 .post,
 .page
-  position: absolute
-  width: 100%
-  opacity: 0.05
-  transition: opacity 0.5s
-
-  &.active
-    opacity: 1
 
   > header
     margin: 1em 0 1em
@@ -164,14 +159,19 @@ h1, h2, h3, h4
       
   p
     line-height: 1.8em
-    text-align: justify
   h1
     font-size: 1.4em
+    margin: 1em 0 0.5em 
   h2
     font-size: 1.2em
   h3
     font-size: 1em
     font-weight: bold
+  img
+    display: block
+    width: 100%
+    border: 0
+    margin: 1em 0
     
 .body
   margin-bottom: 1.5em
@@ -223,6 +223,30 @@ nav ul
     
     span
       display block
+
+
+@media screen and (max-width: 47em)
+  body
+    overflow-y: scroll
+  pre,
+  img
+    margin: 1em -1.5em !important
+  img
+    width: 115% !important
+  .page,
+  .post
+    overflow: visible
+    position: relative
+  body,
+  #scroll,
+  #container,
+  #content
+    height: auto
+  .tags
+    display: block
+  .tag
+    margin-top: 0.3em !important
+
     
 pre code,
 .CodeMirror

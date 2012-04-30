@@ -1,4 +1,4 @@
-#posts
-  each post, i in posts
-    article.post(id= 'post-' + post.slug, style='left: ' + i * 120 + '%')
-      include post
+ul#posts
+  each post in posts
+    li: a(href=post.path)
+      h1= post.title

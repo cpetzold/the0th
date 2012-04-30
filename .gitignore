@@ -2,3 +2,4 @@ node_modules
 *.swp
 *.swo
 .nide
+.DS_Store

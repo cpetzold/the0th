@@ -1,41 +1,19 @@
 $(function() {
   
-  $('a').pjax('#content');
+  $('a').pjax('#content');;
 
-  var el = $('#content')
-    , scroll = $('#scroll')
-    , amount = 120
-    , i = 0
-    , posts = $('.post')
-    , moving = false;
-
-  $(posts[0]).addClass('active');
-
-  $(window).keydown(function(e) {
-    switch (e.keyCode) {
-      case 37: 
-        if (i && !moving) return moveTo(--i);
-        break;
-      case 39:
-        if (i < posts.length - 1 && !moving) return moveTo(++i);
-        break;
+  var from = 5
+    , top = true;
+  $(window).scroll(function(e) {
+    var offset = $(window).scrollTop();
+    
+    if (top && offset > from) {
+      top = false;
+      $('#shadow').addClass('active');
+    } else if (!top && offset <= from) {
+      top = true;
+      $('#shadow').removeClass('active');
     }
-  });
-
-  window.moveTo = function(i) {
-    posts.removeClass('active');
-    $(posts[i]).addClass('active');
-    moving = true;
-    el.css('left', -i * amount + '%');
-    scroll.scrollTop(0);
-    // scroll.animate({ scrollTop: 0 }, 500);
-    setTimeout(function() {
-      moving = false;
-    }, 501);
-  }
-
-  el[0].addEventListener('transitionend', function(e) {
-    console.log(e);
   });
 
 

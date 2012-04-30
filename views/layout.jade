@@ -1,19 +1,24 @@
 !!! 5
 html
   head
-    title The0th
-    link(rel= 'stylesheet', href= '/screen.css')
-    link(rel= 'stylesheet', href= '/codemirror.css')
-    script(src= 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js')
-    script(src= '/js/jquery.pjax.js')
-    script(src= '/js/codemirror.js')
-    script(src= '/js/modes/xml.js')
-    script(src= '/js/modes/javascript.js')
-    script(src= '/js/modes/markdown.js')
-    script(src= '/js/modes/gfm.js')
+    title Conner Petzold
+    meta(name='viewport', content='user-scalable=no, width=device-width, initial-scale=1.0')
+    link(rel='stylesheet', href='/screen.css')
+    link(rel='stylesheet', href='/codemirror.css')
+    script(src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js')
+    script(src='/js/jquery.pjax.js')
+    script(src='/js/codemirror.js')
+    script(src='/js/modes/xml.js')
+    script(src='/js/modes/javascript.js')
+    script(src='/js/modes/markdown.js')
+    script(src='/js/modes/gfm.js')
   body
-    #scroll
-      #container
-        section#content!= body
+    #head
+      .container
+        h3 Conner Petzold
+
+    #shadow
+    .container
+      section#content!= body
     
-    script(src= '/js/index.js')
+    script(src='/js/index.js')
